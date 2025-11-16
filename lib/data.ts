@@ -60,7 +60,7 @@ export const services: Service[] = [
       "Improved lighting, ventilation and power points",
       "Plumbing and appliance reconfiguration"
     ],
-    image: "https://images.pexels.com/photos/3735410/pexels-photo-3735410.jpeg",
+    image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
     gallery: [
       "https://images.pexels.com/photos/3735412/pexels-photo-3735412.jpeg",
       "https://images.pexels.com/photos/3735413/pexels-photo-3735413.jpeg",
@@ -384,7 +384,7 @@ export const services: Service[] = [
       "Texture and special effect finishes",
       "Fast-track repainting for handovers"
     ],
-    image: "https://images.pexels.com/photos/1573826/pexels-photo-1573826.jpeg",
+    image: "https://images.pexels.com/photos/6585752/pexels-photo-6585752.jpeg",
     gallery: [
       "https://images.pexels.com/photos/1573827/pexels-photo-1573827.jpeg",
       "https://images.pexels.com/photos/1573828/pexels-photo-1573828.jpeg",

@@ -17,8 +17,8 @@ export function SiteFooter() {
               QuickAccess DXB
             </h3>
             <p className="max-w-xs text-xs leading-relaxed">
-              Fit out, renovation and maintenance specialists transforming homes,
-              offices and retail spaces across Dubai.
+              Fit out, renovation and maintenance specialists transforming
+              homes, offices and retail spaces across Dubai.
             </p>
           </div>
           <div>
@@ -67,10 +67,6 @@ export function SiteFooter() {
               Email: info@quickaccessdxb.com
             </p>
           </div>
-        </div>
-        <div className="mt-6 flex flex-col items-start justify-between gap-2 border-t border-border/60 pt-4 text-[11px] text-muted-foreground md:flex-row">
-          <span>© {year} QuickAccess DXB. All rights reserved.</span>
-          <span>Designed &amp; built with Next.js, Tailwind CSS &amp; shadcn/ui.</span>
         </div>
       </div>
     </footer>
