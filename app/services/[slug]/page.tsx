@@ -44,15 +44,29 @@ export default function ServiceDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="section-padding bg-gradient-to-b from-background via-background to-muted/40">
-      <div className="container space-y-8">
+    <div className="section-padding relative overflow-hidden">
+      {/* Logo-based background */}
+      <div className="pointer-events-none absolute inset-0">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(145deg, #FDBA21 0%, #FF8A1E 45%, #E44828 100%)",
+            opacity: 0.12,
+          }}
+        />
+        <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[#FDBA21]/20 blur-3xl" />
+        <div className="absolute -bottom-32 -left-10 h-80 w-80 rounded-full bg-[#E44828]/18 blur-3xl" />
+      </div>
+
+      <div className="container relative space-y-8">
         {/* Top Bar */}
         <div className="flex flex-wrap items-center justify-between gap-4">
           <Button
             asChild
             variant="outline"
             size="sm"
-            className="rounded-2xl border-border/70"
+            className="rounded-2xl border-[#FF8A1E]/40 text-[#FF8A1E] hover:bg-[#FF8A1E]/5"
           >
             <Link href="/services">
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -82,9 +96,9 @@ export default function ServiceDetailPage({ params }: Props) {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] xl:gap-14">
           {/* Left: Main Content */}
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-2xl border border-border/60 bg-background/60 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
-                <Wrench className="h-3 w-3" />
+            <div className="inline-flex items-center gap-2 rounded-2xl border border-[#FF8A1E]/40 bg-[#FF8A1E]/8 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#FF8A1E]">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#FF8A1E]/15">
+                <Wrench className="h-3 w-3 text-[#FF8A1E]" />
               </span>
               <span>Service &amp; Repairs</span>
             </div>
@@ -99,10 +113,10 @@ export default function ServiceDetailPage({ params }: Props) {
             </div>
 
             {/* Quick Info / Highlights */}
-            <div className="grid gap-3 rounded-3xl border border-border/60 bg-background/70 p-4 text-sm md:grid-cols-3 md:p-5">
+            <div className="grid gap-3 rounded-3xl border border-border/60 bg-background/80 p-4 text-sm md:grid-cols-3 md:p-5">
               <div className="flex items-start gap-3">
-                <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-2xl bg-primary/5">
-                  <Clock className="h-4 w-4 text-primary" />
+                <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-2xl bg-[#FF8A1E]/8">
+                  <Clock className="h-4 w-4 text-[#FF8A1E]" />
                 </div>
                 <div>
                   <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
@@ -113,8 +127,8 @@ export default function ServiceDetailPage({ params }: Props) {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-2xl bg-primary/5">
-                  <ShieldCheck className="h-4 w-4 text-primary" />
+                <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-2xl bg-[#FF8A1E]/8">
+                  <ShieldCheck className="h-4 w-4 text-[#FF8A1E]" />
                 </div>
                 <div>
                   <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
@@ -125,8 +139,8 @@ export default function ServiceDetailPage({ params }: Props) {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-2xl bg-primary/5">
-                  <PhoneCall className="h-4 w-4 text-primary" />
+                <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-2xl bg-[#FF8A1E]/8">
+                  <PhoneCall className="h-4 w-4 text-[#FF8A1E]" />
                 </div>
                 <div>
                   <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
@@ -151,9 +165,9 @@ export default function ServiceDetailPage({ params }: Props) {
                 {service.highlights.map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-2 rounded-2xl bg-background/70 px-3 py-2"
+                    className="flex items-start gap-2 rounded-2xl bg-background/75 px-3 py-2"
                   >
-                    <span className="mt-[6px] inline-block h-1.5 w-1.5 rounded-full bg-primary" />
+                    <span className="mt-[6px] inline-block h-1.5 w-1.5 rounded-full bg-[#FF8A1E]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -196,7 +210,7 @@ export default function ServiceDetailPage({ params }: Props) {
             ) : null}
 
             {/* CTA Card */}
-            <div className="space-y-3 rounded-3xl border border-primary/20 bg-primary/5 p-4 md:p-5">
+            <div className="space-y-3 rounded-3xl border border-[#FF8A1E]/30 bg-[#FF8A1E]/6 p-4 md:p-5">
               <h3 className="text-sm font-semibold md:text-base">
                 Ready to book this service?
               </h3>
@@ -205,7 +219,11 @@ export default function ServiceDetailPage({ params }: Props) {
                 to you with an exact quote and earliest available slot.
               </p>
               <div className="flex flex-wrap items-center gap-3">
-                <Button asChild size="sm" className="rounded-2xl">
+                <Button
+                  asChild
+                  size="sm"
+                  className="rounded-2xl bg-gradient-to-r from-[#FDBA21] via-[#FF8A1E] to-[#E44828] text-xs font-medium shadow-sm hover:from-[#FFCC3A] hover:via-[#FF8A1E] hover:to-[#F0522F]"
+                >
                   <Link
                     href={`/contact?service=${encodeURIComponent(
                       service.slug
@@ -218,9 +236,9 @@ export default function ServiceDetailPage({ params }: Props) {
                   asChild
                   size="sm"
                   variant="outline"
-                  className="rounded-2xl border-dashed"
+                  className="rounded-2xl border-dashed border-[#FF8A1E]/40 text-[#FF8A1E] hover:bg-[#FF8A1E]/5"
                 >
-                  <a href="tel: +971 558177611">
+                  <a href="tel:+971558177611">
                     <PhoneCall className="mr-2 h-3.5 w-3.5" />
                     Call our team
                   </a>
@@ -234,7 +252,7 @@ export default function ServiceDetailPage({ params }: Props) {
         </div>
 
         {/* How it works */}
-        <section className="mt-6 rounded-3xl border border-border/70 bg-background/80 p-5 md:p-7 lg:p-8">
+        <section className="mt-6 rounded-3xl border border-border/70 bg-background/85 p-5 md:p-7 lg:p-8">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 className="text-lg font-semibold md:text-xl">
@@ -275,9 +293,7 @@ export default function ServiceDetailPage({ params }: Props) {
   );
 }
 
-/**
- * Small presentational component for the “How it works” steps
- */
+/** Small presentational component for the “How it works” steps */
 type StepCardProps = {
   step: string;
   title: string;

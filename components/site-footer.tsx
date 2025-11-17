@@ -10,12 +10,15 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t bg-muted/30">
+    <footer className="border-t bg-gradient-to-b from-background via-muted/40 to-muted/60">
+      {/* top accent line using logo gradient */}
+      <div className="h-[2px] w-full bg-gradient-to-r from-[#FDBA21] via-[#FF8A1E] to-[#E44828]" />
+
       <div className="container py-8 text-sm text-muted-foreground">
         <div className="grid gap-6 md:grid-cols-4">
           {/* About */}
           <div>
-            <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#FF8A1E]">
               QuickAccess DXB
             </h3>
             <p className="max-w-xs text-xs leading-relaxed">
@@ -28,7 +31,7 @@ export function SiteFooter() {
               <Link
                 href="https://www.facebook.com/people/Quick-Access/61580390063588/?rdid=ComJdsn00c65UDKO&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1LpxqxVyko%2F"
                 target="_blank"
-                className="rounded-full p-2 hover:bg-accent transition"
+                className="rounded-full border border-transparent bg-background/60 p-2 text-muted-foreground transition hover:border-[#FF8A1E]/60 hover:bg-[#FF8A1E]/10 hover:text-[#FF8A1E]"
               >
                 <Facebook className="h-4 w-4" />
               </Link>
@@ -36,7 +39,7 @@ export function SiteFooter() {
               <Link
                 href="https://www.instagram.com/dxbquickaccess/?igsh=bXo3eTF3enk0MGY5#"
                 target="_blank"
-                className="rounded-full p-2 hover:bg-accent transition"
+                className="rounded-full border border-transparent bg-background/60 p-2 text-muted-foreground transition hover:border-[#FF8A1E]/60 hover:bg-[#FF8A1E]/10 hover:text-[#FF8A1E]"
               >
                 <Instagram className="h-4 w-4" />
               </Link>
@@ -44,7 +47,7 @@ export function SiteFooter() {
               <Link
                 href="https://www.linkedin.com/company/quick-access-technical-services/"
                 target="_blank"
-                className="rounded-full p-2 hover:bg-accent transition"
+                className="rounded-full border border-transparent bg-background/60 p-2 text-muted-foreground transition hover:border-[#FF8A1E]/60 hover:bg-[#FF8A1E]/10 hover:text-[#FF8A1E]"
               >
                 <Linkedin className="h-4 w-4" />
               </Link>
@@ -56,24 +59,33 @@ export function SiteFooter() {
             <h4 className="mb-3 text-sm font-semibold text-foreground">
               Quick Links
             </h4>
-            <ul className="space-y-1">
+            <ul className="space-y-1 text-xs">
               <li>
-                <Link href="/services" className="hover:text-foreground">
+                <Link
+                  href="/services"
+                  className="transition hover:text-[#FF8A1E]"
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="hover:text-foreground">
+                <Link
+                  href="/projects"
+                  className="transition hover:text-[#FF8A1E]"
+                >
                   Projects
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="hover:text-foreground">
+                <Link href="/faq" className="transition hover:text-[#FF8A1E]">
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-foreground">
+                <Link
+                  href="/contact"
+                  className="transition hover:text-[#FF8A1E]"
+                >
                   Contact
                 </Link>
               </li>
@@ -97,12 +109,26 @@ export function SiteFooter() {
               Contact
             </h4>
             <p className="text-xs leading-relaxed">
-              Phone / WhatsApp: +971 55 817 7611
+              Phone / WhatsApp:{" "}
+              <a
+                href="tel:+971558177611"
+                className="font-medium text-[#FF8A1E] hover:underline"
+              >
+                +971 55 817 7611
+              </a>
               <br />
-              Email: info@quickaccessdxb.com
+              Email:{" "}
+              <a
+                href="mailto:info@quickaccessdxb.com"
+                className="font-medium text-[#FF8A1E] hover:underline"
+              >
+                info@quickaccessdxb.com
+              </a>
             </p>
           </div>
         </div>
+
+        {/* Bottom strip */}
       </div>
     </footer>
   );

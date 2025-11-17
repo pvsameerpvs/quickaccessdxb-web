@@ -28,15 +28,29 @@ export default function ProjectDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="section-padding bg-gradient-to-b from-background via-background to-muted/40">
-      <div className="container space-y-8">
+    <div className="section-padding relative overflow-hidden">
+      {/* logo-based background */}
+      <div className="pointer-events-none absolute inset-0">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(145deg, #FDBA21 0%, #FF8A1E 45%, #E44828 100%)",
+            opacity: 0.12,
+          }}
+        />
+        <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[#FDBA21]/20 blur-3xl" />
+        <div className="absolute -bottom-32 -left-10 h-80 w-80 rounded-full bg-[#E44828]/18 blur-3xl" />
+      </div>
+
+      <div className="container relative space-y-8">
         {/* Top bar / breadcrumb */}
         <div className="flex flex-wrap items-center justify-between gap-4">
           <Button
             asChild
             variant="outline"
             size="sm"
-            className="rounded-2xl border-border/70"
+            className="rounded-2xl border-[#FF8A1E]/40 text-[#FF8A1E] hover:bg-[#FF8A1E]/5"
           >
             <Link href="/projects">
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -56,7 +70,7 @@ export default function ProjectDetailPage({ params }: Props) {
               Projects
             </Link>
             <span>›</span>
-            <span className="truncate max-w-[10rem] sm:max-w-xs">
+            <span className="max-w-[10rem] truncate sm:max-w-xs">
               {project.name}
             </span>
           </div>
@@ -68,9 +82,9 @@ export default function ProjectDetailPage({ params }: Props) {
           <div className="space-y-6">
             {/* Label + title */}
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 rounded-2xl border border-border/60 bg-background/60 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary/80">
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
-                  <LayoutTemplate className="h-3 w-3" />
+              <div className="inline-flex items-center gap-2 rounded-2xl border border-[#FF8A1E]/40 bg-[#FF8A1E]/8 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#FF8A1E]">
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#FF8A1E]/15">
+                  <LayoutTemplate className="h-3 w-3 text-[#FF8A1E]" />
                 </span>
                 <span>Project case study</span>
               </div>
@@ -84,49 +98,40 @@ export default function ProjectDetailPage({ params }: Props) {
             </div>
 
             {/* Project meta / quick facts */}
-            <div className="grid gap-3 rounded-3xl border border-border/60 bg-background/70 p-4 text-sm md:grid-cols-3 md:p-5">
+            <div className="grid gap-3 rounded-3xl border border-border/60 bg-background/80 p-4 text-sm md:grid-cols-3 md:p-5">
               <div className="flex items-start gap-3">
-                <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-2xl bg-primary/5">
-                  <Building2 className="h-4 w-4 text-primary" />
+                <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-2xl bg-[#FF8A1E]/8">
+                  <Building2 className="h-4 w-4 text-[#FF8A1E]" />
                 </div>
                 <div>
                   <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
                     Client
                   </p>
-                  <p className="text-sm font-semibold">
-                    {/* {project.client || "Confidential"} */}
-                    Confidential
-                  </p>
+                  <p className="text-sm font-semibold">Confidential</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-2xl bg-primary/5">
-                  <MapPin className="h-4 w-4 text-primary" />
+                <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-2xl bg-[#FF8A1E]/8">
+                  <MapPin className="h-4 w-4 text-[#FF8A1E]" />
                 </div>
                 <div>
                   <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
                     Location
                   </p>
-                  <p className="text-sm font-semibold">
-                    {/* {project.location || "Multiple locations"} */}
-                    Multiple locations
-                  </p>
+                  <p className="text-sm font-semibold">Multiple locations</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-2xl bg-primary/5">
-                  <CalendarDays className="h-4 w-4 text-primary" />
+                <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-2xl bg-[#FF8A1E]/8">
+                  <CalendarDays className="h-4 w-4 text-[#FF8A1E]" />
                 </div>
                 <div>
                   <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
                     Duration
                   </p>
-                  <p className="text-sm font-semibold">
-                    {/* {project.duration || "Completed on schedule"} */}
-                    Completed on schedule
-                  </p>
+                  <p className="text-sm font-semibold">Completed on schedule</p>
                 </div>
               </div>
             </div>
@@ -145,16 +150,16 @@ export default function ProjectDetailPage({ params }: Props) {
                 {project.highlights.map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-2 rounded-2xl bg-background/70 px-3 py-2"
+                    className="flex items-start gap-2 rounded-2xl bg-background/75 px-3 py-2"
                   >
-                    <span className="mt-[6px] inline-block h-1.5 w-1.5 rounded-full bg-primary" />
+                    <span className="mt-[6px] inline-block h-1.5 w-1.5 rounded-full bg-[#FF8A1E]" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Outcome / results (generic but nice) */}
+            {/* Outcome / results */}
             <div className="space-y-3 rounded-3xl border border-border/70 bg-muted/40 p-4 md:p-5">
               <h2 className="text-base font-semibold md:text-lg">
                 Project outcome
@@ -166,19 +171,19 @@ export default function ProjectDetailPage({ params }: Props) {
                 team, and ensured clear communication at every stage.
               </p>
               <div className="grid gap-3 text-xs text-muted-foreground sm:grid-cols-3">
-                <div className="rounded-2xl bg-background/70 px-3 py-2">
+                <div className="rounded-2xl bg-background/75 px-3 py-2">
                   <p className="text-[11px] font-semibold uppercase tracking-wide">
                     Efficiency
                   </p>
                   <p>Optimized resource usage & scheduling.</p>
                 </div>
-                <div className="rounded-2xl bg-background/70 px-3 py-2">
+                <div className="rounded-2xl bg-background/75 px-3 py-2">
                   <p className="text-[11px] font-semibold uppercase tracking-wide">
                     Reliability
                   </p>
                   <p>Reduced downtime and unplanned issues.</p>
                 </div>
-                <div className="rounded-2xl bg-background/70 px-3 py-2">
+                <div className="rounded-2xl bg-background/75 px-3 py-2">
                   <p className="text-[11px] font-semibold uppercase tracking-wide">
                     Support
                   </p>
@@ -223,7 +228,7 @@ export default function ProjectDetailPage({ params }: Props) {
             ) : null}
 
             {/* CTA card */}
-            <div className="space-y-3 rounded-3xl border border-primary/20 bg-primary/5 p-4 md:p-5">
+            <div className="space-y-3 rounded-3xl border border-[#FF8A1E]/30 bg-[#FF8A1E]/6 p-4 md:p-5">
               <h3 className="text-sm font-semibold md:text-base">
                 Planning a similar project?
               </h3>
@@ -233,7 +238,11 @@ export default function ProjectDetailPage({ params }: Props) {
                 experience with projects like this.
               </p>
               <div className="flex flex-wrap items-center gap-3">
-                <Button asChild size="sm" className="rounded-2xl">
+                <Button
+                  asChild
+                  size="sm"
+                  className="rounded-2xl bg-gradient-to-r from-[#FDBA21] via-[#FF8A1E] to-[#E44828] text-xs font-medium shadow-sm hover:from-[#FFCC3A] hover:via-[#FF8A1E] hover:to-[#F0522F]"
+                >
                   <Link
                     href={`/contact?project=${encodeURIComponent(
                       project.slug
@@ -246,7 +255,7 @@ export default function ProjectDetailPage({ params }: Props) {
                   asChild
                   size="sm"
                   variant="outline"
-                  className="rounded-2xl border-dashed"
+                  className="rounded-2xl border-dashed border-[#FF8A1E]/40 text-[#FF8A1E] hover:bg-[#FF8A1E]/5"
                 >
                   <Link href="/projects">View more projects</Link>
                 </Button>
@@ -260,7 +269,7 @@ export default function ProjectDetailPage({ params }: Props) {
         </div>
 
         {/* Project phases / timeline */}
-        <section className="mt-4 rounded-3xl border border-border/70 bg-background/80 p-5 md:p-7 lg:p-8">
+        <section className="mt-4 rounded-3xl border border-border/70 bg-background/85 p-5 md:p-7 lg:p-8">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 className="text-lg font-semibold md:text-xl">
