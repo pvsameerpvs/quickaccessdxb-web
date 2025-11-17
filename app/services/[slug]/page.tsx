@@ -220,7 +220,7 @@ export default function ServiceDetailPage({ params }: Props) {
                   variant="outline"
                   className="rounded-2xl border-dashed"
                 >
-                  <a href="tel:+971000000000">
+                  <a href="tel: +971 558177611">
                     <PhoneCall className="mr-2 h-3.5 w-3.5" />
                     Call our team
                   </a>

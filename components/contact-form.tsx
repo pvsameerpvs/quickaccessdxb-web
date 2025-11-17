@@ -1,81 +1,90 @@
+// app/contact/ContactForm.tsx
 "use client";
 
-import { FormEvent, useState } from "react";
+import { useState, FormEvent } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
 export function ContactForm() {
-  const [isSending, setIsSending] = useState(false);
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [location, setLocation] = useState("");
+  const [service, setService] = useState("");
+  const [details, setDetails] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSending(true);
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+    const whatsappNumber = "971558177611"; // +971 558177611 in wa.me format
 
-    const fullName = (formData.get("fullName") as string) || "";
-    const email = (formData.get("email") as string) || "";
-    const phone = (formData.get("phone") as string) || "";
-    const location = (formData.get("location") as string) || "";
-    const service = (formData.get("service") as string) || "";
-    const details = (formData.get("details") as string) || "";
+    const message = encodeURIComponent(
+      [
+        "New enquiry from QuickAccess DXB website:",
+        "",
+        `Name: ${fullName}`,
+        `Email: ${email}`,
+        `Phone / WhatsApp: ${phone}`,
+        `Location: ${location}`,
+        `Service required: ${service}`,
+        "",
+        `Project details:`,
+        details || "N/A",
+      ].join("\n")
+    );
 
-    const phoneNumber = "971558177611"; // your WhatsApp number (no +, no spaces)
-
-    const message = `
-New enquiry from QuickAccess DXB website:
-
-Name: ${fullName}
-Email: ${email}
-Phone / WhatsApp: ${phone}
-Location: ${location}
-Service required: ${service}
-
-Project details:
-${details}
-    `.trim();
-
-    const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
-      message
-    )}`;
-
-    // Open WhatsApp directly in the same tab
-    window.location.href = url;
-
-    // (optional) if something fails before redirect, this would re-enable the button
-    setIsSending(false);
+    // Open WhatsApp chat with pre-filled message
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
   };
 
   return (
-    <form className="space-y-4" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid gap-4 md:grid-cols-2">
-        <Input name="fullName" placeholder="Full name" required />
-        <Input name="email" placeholder="Email" type="email" required />
+        <Input
+          placeholder="Full name"
+          required
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
+        />
+        <Input
+          placeholder="Email"
+          type="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
-        <Input name="phone" placeholder="Phone / WhatsApp" required />
         <Input
-          name="location"
+          placeholder="Phone / WhatsApp"
+          required
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        />
+        <Input
           placeholder="Location in Dubai (community / building)"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
         />
       </div>
 
       <Input
-        name="service"
         placeholder="Service required (e.g. villa renovation, office fit out)"
+        value={service}
+        onChange={(e) => setService(e.target.value)}
       />
 
       <Textarea
-        name="details"
         rows={5}
         placeholder="Describe your project, timeline and any special requirements."
+        value={details}
+        onChange={(e) => setDetails(e.target.value)}
       />
 
-      <Button type="submit" className="rounded-2xl" disabled={isSending}>
-        {isSending ? "Opening WhatsApp..." : "Submit & Send via WhatsApp"}
+      <Button type="submit" className="rounded-2xl">
+        Submit Request
       </Button>
 
       <p className="text-xs text-muted-foreground">

@@ -1,6 +1,6 @@
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
+// app/contact/page.tsx
+
+import { ContactForm } from "@/components/contact-form";
 
 export const metadata = {
   title: "Contact – QuickAccess DXB",
@@ -21,29 +21,11 @@ export default function ContactPage() {
               quotation.
             </p>
           </div>
-          <form className="space-y-4">
-            <div className="grid gap-4 md:grid-cols-2">
-              <Input placeholder="Full name" required />
-              <Input placeholder="Email" type="email" required />
-            </div>
-            <div className="grid gap-4 md:grid-cols-2">
-              <Input placeholder="Phone / WhatsApp" required />
-              <Input placeholder="Location in Dubai (community / building)" />
-            </div>
-            <Input placeholder="Service required (e.g. villa renovation, office fit out)" />
-            <Textarea
-              rows={5}
-              placeholder="Describe your project, timeline and any special requirements."
-            />
-            <Button type="submit" className="rounded-2xl">
-              Submit Request
-            </Button>
-            <p className="text-xs text-muted-foreground">
-              By submitting this form you consent to being contacted by phone,
-              WhatsApp or email regarding your enquiry.
-            </p>
-          </form>
+
+          {/* Client Component handles interactivity */}
+          <ContactForm />
         </div>
+
         <div className="space-y-4 text-sm text-muted-foreground">
           <div className="rounded-3xl border bg-muted/40 p-5">
             <h2 className="mb-2 text-sm font-semibold text-foreground">
