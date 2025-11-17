@@ -26,7 +26,7 @@ export function SiteFooter() {
             {/* Social Icons */}
             <div className="mt-4 flex items-center gap-3">
               <Link
-                href="https://facebook.com"
+                href="https://www.facebook.com/people/Quick-Access/61580390063588/?rdid=ComJdsn00c65UDKO&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1LpxqxVyko%2F"
                 target="_blank"
                 className="rounded-full p-2 hover:bg-accent transition"
               >
@@ -34,7 +34,7 @@ export function SiteFooter() {
               </Link>
 
               <Link
-                href="https://instagram.com"
+                href="https://www.instagram.com/dxbquickaccess/?igsh=bXo3eTF3enk0MGY5#"
                 target="_blank"
                 className="rounded-full p-2 hover:bg-accent transition"
               >
@@ -42,7 +42,7 @@ export function SiteFooter() {
               </Link>
 
               <Link
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/quick-access-technical-services/"
                 target="_blank"
                 className="rounded-full p-2 hover:bg-accent transition"
               >

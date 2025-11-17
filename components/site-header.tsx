@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ModeToggle } from "@/components/mode-toggle";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -22,6 +23,12 @@ const navItems = [
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  // Close mobile sheet whenever the route changes
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <header className="fixed inset-x-0 top-0 z-40">
@@ -35,7 +42,7 @@ export function SiteHeader() {
           {/* Left: brand */}
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/lodo-quicl.png" // make sure this file exists in /public
+              src="/lodo-quicl.png"
               alt="QuickAccess DXB Logo"
               width={130}
               height={32}
@@ -74,7 +81,7 @@ export function SiteHeader() {
             </div>
 
             {/* Mobile menu */}
-            <Sheet>
+            <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
                 <Button
                   variant="outline"
@@ -95,11 +102,17 @@ export function SiteHeader() {
                         "rounded-2xl px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground",
                         pathname === item.href && "bg-accent text-foreground"
                       )}
+                      // optional: close immediately on click (even before route finishes)
+                      onClick={() => setOpen(false)}
                     >
                       {item.label}
                     </Link>
                   ))}
-                  <Button asChild className="mt-4 rounded-2xl">
+                  <Button
+                    asChild
+                    className="mt-4 rounded-2xl"
+                    onClick={() => setOpen(false)}
+                  >
                     <Link href="/contact">Contact Us</Link>
                   </Button>
                 </nav>
