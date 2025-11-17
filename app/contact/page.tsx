@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export const metadata = {
   title: "Contact – QuickAccess DXB",
   description:
-    "Request a quotation or book an appointment for interior design, fit out, renovation or maintenance services in Dubai."
+    "Request a quotation or book an appointment for interior design, fit out, renovation or maintenance services in Dubai.",
 };
 
 export default function ContactPage() {
@@ -57,7 +57,7 @@ export default function ContactPage() {
             <p className="mt-3">
               Mon to Sunday: 8:00 AM to 6:00 PM
               <br />
-              Phone / WhatsApp: +971 50 000 0000
+              Phone / WhatsApp: +971 558177611
               <br />
               Email: info@quickaccessdxb.com
             </p>

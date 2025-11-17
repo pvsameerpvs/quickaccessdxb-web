@@ -26,7 +26,7 @@ const fadeRight = {
 
 export function AboutSection() {
   return (
-    <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.6fr]">
+    <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.6fr] ">
       {/* LEFT COLUMN — SLIDE FROM LEFT */}
       <motion.div
         className="space-y-6"
@@ -47,7 +47,7 @@ export function AboutSection() {
           transition={{ type: "spring", stiffness: 200, damping: 18 }}
         >
           <Image
-            src="/hero.jpg"
+            src="/hero-main2.jpg"
             alt="About Quick Access"
             fill
             className="object-cover"
@@ -64,7 +64,7 @@ export function AboutSection() {
         viewport={{ once: true, amount: 0.2 }}
       >
         <p className="text-foreground">
-          <span className="italic font-semibold">Quick Access</span>
+          <span className="italic font-semibold pr-1">Quick Access</span>
           {/* <InlineImage src="/pill.png" alt="pill visual" /> */}
           is a Dubai–based technical services and renovation company creating
           reliable, high–quality solutions that enhance the living and working

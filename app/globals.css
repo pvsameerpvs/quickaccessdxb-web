@@ -28,24 +28,35 @@
 
   .dark {
     --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --ring: 217.2 32.6% 17.5%;
+     --background: 230 60% 16%; /* Main navy background */
+  --foreground: 230 20% 96%; /* Light text on navy */
+
+  --muted: 230 35% 22%;
+  --muted-foreground: 230 20% 70%;
+
+  --popover: 230 60% 16%;
+  --popover-foreground: 230 20% 96%;
+
+  --border: 230 30% 28%;
+  --input: 230 30% 28%;
+
+  --card: 230 60% 16%;
+  --card-foreground: 230 20% 96%;
+
+  --primary: 230 60% 16%;        /* Navy as brand color */
+  --primary-foreground: 230 20% 96%;
+
+  --secondary: 230 35% 22%;      /* Slightly lighter navy */
+  --secondary-foreground: 230 20% 96%;
+
+  --accent: 230 35% 22%;
+  --accent-foreground: 230 20% 96%;
+
+  --destructive: 0 78% 55%;
+  --destructive-foreground: 0 0% 100%;
+
+  --ring: 230 40% 40%;
+  --radius: 0.5rem;
   }
 
   body {

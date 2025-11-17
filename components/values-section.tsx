@@ -16,8 +16,7 @@ const values = [
     title: "24/7 Services",
     description:
       "Emergency support and flexible scheduling to work around your routine.",
-    image:
-      "https://images.pexels.com/photos/37347/office-computer-business-headquarters.jpg",
+    image: "/hard-work.jpeg",
   },
   {
     icon: ShieldCheck,

@@ -22,11 +22,11 @@ export const services: Service[] = [
       "New finishes for floors, walls and ceilings",
       "Built-in storage and joinery upgrades"
     ],
-    image: "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg",
+    image: "/aprtment-revamp1.jpeg",
     gallery: [
-      "https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg",
-      "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg",
-      "https://images.pexels.com/photos/6186814/pexels-photo-6186814.jpeg"
+      "/aprtment-revamp2.jpeg",
+      "/aprtment-revamp3.jpeg",
+      "/aprtment-revamp4.jpeg"
     ]
   },
   {
@@ -41,11 +41,11 @@ export const services: Service[] = [
       "Dining layout, bar counters and service zones",
       "Lighting, acoustics and ambiance tuning"
     ],
-    image: "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg",
+    image: "/RestaurantUpgradation1.jpeg",
     gallery: [
-      "https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg",
-      "https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg",
-      "https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg"
+      "/RestaurantUpgradation2.jpeg",
+      "/RestaurantUpgradation3.jpeg",
+      "/RestaurantUpgradation4.jpeg"
     ]
   },
   {
@@ -60,11 +60,11 @@ export const services: Service[] = [
       "Improved lighting, ventilation and power points",
       "Plumbing and appliance reconfiguration"
     ],
-    image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
+    image: "/KitchenRectify1.jpeg",
     gallery: [
-      "https://images.pexels.com/photos/3735412/pexels-photo-3735412.jpeg",
-      "https://images.pexels.com/photos/3735413/pexels-photo-3735413.jpeg",
-      "https://images.pexels.com/photos/3735411/pexels-photo-3735411.jpeg"
+      "/KitchenRectify2.jpeg",
+      "/KitchenRectify3.jpeg",
+      "/KitchenRectify4.jpeg"
     ]
   },
   {
@@ -79,11 +79,11 @@ export const services: Service[] = [
       "New sanitary ware, mixers and accessories",
       "Waterproofing, tiling and glass partitions"
     ],
-    image: "https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg",
+    image: "/bathroom-furbish2.jpeg",
     gallery: [
-      "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
-      "https://images.pexels.com/photos/1454805/pexels-photo-1454805.jpeg",
-      "https://images.pexels.com/photos/1457845/pexels-photo-1457845.jpeg"
+      "/bathroom-furbish1.jpeg",
+      "/bathroom-furbish3.jpeg",
+      "/bathroom-furbish4.jpeg"
     ]
   },
   {
@@ -98,11 +98,11 @@ export const services: Service[] = [
       "Duct inspection and air-flow balancing",
       "Package, split and VRF system servicing"
     ],
-    image: "https://images.pexels.com/photos/3964345/pexels-photo-3964345.jpeg",
+    image: "/HVAC2.jpeg",
     gallery: [
-      "https://images.pexels.com/photos/3964343/pexels-photo-3964343.jpeg",
-      "https://images.pexels.com/photos/3964347/pexels-photo-3964347.jpeg",
-      "https://images.pexels.com/photos/3964340/pexels-photo-3964340.jpeg"
+      "/HVAC1.jpeg",
+      "/HVAC3.jpeg",
+      "/HVAC4.jpeg"
     ]
   },
   {
@@ -117,11 +117,11 @@ export const services: Service[] = [
       "Plumbing, drainage and water supply works",
       "Mechanical ventilation and exhaust systems"
     ],
-    image: "https://images.pexels.com/photos/4254168/pexels-photo-4254168.jpeg",
+    image: "/MEP2.jpeg",
     gallery: [
-      "https://images.pexels.com/photos/4254166/pexels-photo-4254166.jpeg",
-      "https://images.pexels.com/photos/4254148/pexels-photo-4254148.jpeg",
-      "https://images.pexels.com/photos/4254169/pexels-photo-4254169.jpeg"
+      "/MEP1.jpeg",
+      "/MEP3.jpeg",
+      "/MEP4.jpeg"
     ]
   },
   {
@@ -136,11 +136,11 @@ export const services: Service[] = [
       "Doors, architraves and skirting upgrades",
       "Custom shelves, counters and reception desks"
     ],
-    image: "https://images.pexels.com/photos/5824471/pexels-photo-5824471.jpeg",
+    image: "/carpenter1.jpeg",
     gallery: [
-      "https://images.pexels.com/photos/207256/pexels-photo-207256.jpeg",
-      "https://images.pexels.com/photos/3735411/pexels-photo-3735411.jpeg",
-      "https://images.pexels.com/photos/5824472/pexels-photo-5824472.jpeg"
+      "/carpenter2.jpeg",
+      "/carpenter3.jpeg",
+      "/carpenter4.jpeg"
     ]
   },
   {
@@ -159,7 +159,7 @@ export const services: Service[] = [
     gallery: [
       "https://images.pexels.com/photos/6585768/pexels-photo-6585768.jpeg",
       "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg",
-      "https://images.pexels.com/photos/425548/pexels-photo-425548.jpeg"
+      "https://images.pexels.com/photos/380768/pexels-photo-380768.jpeg"
     ]
   },
   {
@@ -174,11 +174,11 @@ export const services: Service[] = [
       "Shower enclosures and railings",
       "Aluminium frames, windows and storefronts"
     ],
-    image: "https://images.pexels.com/photos/380768/pexels-photo-380768.jpeg",
+    image: "/glass1.jpeg",
     gallery: [
-      "https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg",
-      "https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg",
-      "https://images.pexels.com/photos/37347/office-computer-business-headquarters.jpg"
+      "/glass2.jpeg",
+      "/glass3.jpeg",
+      "/glass4.jpeg"
     ]
   },
   {
@@ -193,11 +193,11 @@ export const services: Service[] = [
       "Mounting TVs, artwork and accessories",
       "Small repairs for doors, locks and hardware"
     ],
-    image: "https://images.pexels.com/photos/8090164/pexels-photo-8090164.jpeg",
+    image: "/handyman1.jpeg",
     gallery: [
-      "https://images.pexels.com/photos/6476584/pexels-photo-6476584.jpeg",
-      "https://images.pexels.com/photos/8487025/pexels-photo-8487025.jpeg",
-      "https://images.pexels.com/photos/8487030/pexels-photo-8487030.jpeg"
+      "/handyman2.jpeg",
+      "/handyman3.jpeg",
+      "/handyman4.jpeg"
     ]
   },
   {
@@ -212,11 +212,11 @@ export const services: Service[] = [
       "Gypsum and acoustic ceiling systems",
       "Integration of lighting, HVAC and sprinklers"
     ],
-    image: "https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg",
+    image: "/office1.jpeg",
     gallery: [
-      "https://images.pexels.com/photos/37347/office-computer-business-headquarters.jpg",
-      "https://images.pexels.com/photos/380768/pexels-photo-380768.jpeg",
-      "https://images.pexels.com/photos/267507/pexels-photo-267507.jpeg"
+      "/office2.jpeg",
+      "/office3.jpeg",
+      "/office4.jpeg"
     ]
   },
   {
@@ -231,11 +231,11 @@ export const services: Service[] = [
       "Ducting, piping and equipment installation",
       "Testing, commissioning and balancing"
     ],
-    image: "https://images.pexels.com/photos/3964341/pexels-photo-3964341.jpeg",
+    image: "/HVAC-Installation1.jpeg",
     gallery: [
-      "https://images.pexels.com/photos/3964343/pexels-photo-3964343.jpeg",
-      "https://images.pexels.com/photos/3964345/pexels-photo-3964345.jpeg",
-      "https://images.pexels.com/photos/3964347/pexels-photo-3964347.jpeg"
+      "/HVAC-Installation2.jpeg",
+      "/HVAC-Installation3.jpeg",
+      "/HVAC-Installation4.jpeg"
     ]
   },
   {
@@ -250,11 +250,11 @@ export const services: Service[] = [
       "Interlock paving and kerb stones",
       "Steps, planters and outdoor features"
     ],
-    image: "https://images.pexels.com/photos/5847410/pexels-photo-5847410.jpeg",
+    image: "/interlock1.jpeg",
     gallery: [
-      "https://images.pexels.com/photos/5847412/pexels-photo-5847412.jpeg",
-      "https://images.pexels.com/photos/5847416/pexels-photo-5847416.jpeg",
-      "https://images.pexels.com/photos/5847430/pexels-photo-5847430.jpeg"
+      "/interlock2.jpeg",
+      "/interlock3.jpeg",
+      "/interlock4.jpeg"
     ]
   },
   {
@@ -269,11 +269,11 @@ export const services: Service[] = [
       "Fixture replacement and relocations",
       "Pump, water heater and tank works"
     ],
-    image: "https://images.pexels.com/photos/5854194/pexels-photo-5854194.jpeg",
+    image: "/plumber1.jpeg",
     gallery: [
-      "https://images.pexels.com/photos/5854192/pexels-photo-5854192.jpeg",
-      "https://images.pexels.com/photos/5854195/pexels-photo-5854195.jpeg",
-      "https://images.pexels.com/photos/5854190/pexels-photo-5854190.jpeg"
+      "/plumber2.jpeg",
+      "/plumber3.jpeg",
+      "/plumber4.jpeg"
     ]
   },
   {
@@ -288,11 +288,11 @@ export const services: Service[] = [
       "Interior emulsion and decorative paints",
       "Exterior weather-resistant coatings"
     ],
-    image: "https://images.pexels.com/photos/1573826/pexels-photo-1573826.jpeg",
+    image: "/pain1ting-service.jpeg",
     gallery: [
-      "https://images.pexels.com/photos/1573827/pexels-photo-1573827.jpeg",
-      "https://images.pexels.com/photos/1573828/pexels-photo-1573828.jpeg",
-      "https://images.pexels.com/photos/6476584/pexels-photo-6476584.jpeg"
+      "/pain2ting-service.jpeg",
+      "/pain3ting-service.jpeg",
+      "/pain4ting-service.jpeg"
     ]
   },
   {
@@ -307,11 +307,11 @@ export const services: Service[] = [
       "Anti-slip tiles for wet and outdoor areas",
       "Regrouting and tile replacement works"
     ],
-    image: "https://images.pexels.com/photos/1457845/pexels-photo-1457845.jpeg",
+    image: "/tilework11.jpg",
     gallery: [
-      "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg",
-      "https://images.pexels.com/photos/1457844/pexels-photo-1457844.jpeg",
-      "https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg"
+      "/tilework12.jpg",
+      "/tilework13.jpeg",
+      "/tilework13.jpeg"
     ]
   },
   {
@@ -326,11 +326,11 @@ export const services: Service[] = [
       "Precise pattern matching and jointing",
       "Removal and replacement of old wallpapers"
     ],
-    image: "https://images.pexels.com/photos/6587848/pexels-photo-6587848.jpeg",
+    image: "/wallpaper1.jpeg",
     gallery: [
-      "https://images.pexels.com/photos/6587843/pexels-photo-6587843.jpeg",
-      "https://images.pexels.com/photos/6587846/pexels-photo-6587846.jpeg",
-      "https://images.pexels.com/photos/6587849/pexels-photo-6587849.jpeg"
+      "/wallpaper2.jpeg",
+      "/wallpaper3.jpeg",
+      "/wallpaper4.jpeg"
     ]
   },
   {
@@ -345,11 +345,11 @@ export const services: Service[] = [
       "Cabling, installation and configuration",
       "Remote viewing and recording setup"
     ],
-    image: "https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg",
+    image: "/cctv1.jpeg",
     gallery: [
-      "https://images.pexels.com/photos/430205/pexels-photo-430205.jpeg",
-      "https://images.pexels.com/photos/430207/pexels-photo-430207.jpeg",
-      "https://images.pexels.com/photos/430206/pexels-photo-430206.jpeg"
+      "/cctv2.jpeg",
+      "/cctv3.jpeg",
+      "/cctv4.jpeg"
     ]
   },
   {
@@ -364,11 +364,11 @@ export const services: Service[] = [
       "Villa, apartment and office deep cleaning",
       "Glass, façade and common area cleaning"
     ],
-    image: "https://images.pexels.com/photos/6195126/pexels-photo-6195126.jpeg",
+    image: "/cleaning1.jpeg",
     gallery: [
-      "https://images.pexels.com/photos/6195271/pexels-photo-6195271.jpeg",
-      "https://images.pexels.com/photos/4107284/pexels-photo-4107284.jpeg",
-      "https://images.pexels.com/photos/6195125/pexels-photo-6195125.jpeg"
+      "/cleaning4.jpeg",
+      "/cleaning3.jpeg",
+      "/cleaning1.jpeg"
     ]
   }
 ,
@@ -384,11 +384,11 @@ export const services: Service[] = [
       "Texture and special effect finishes",
       "Fast-track repainting for handovers"
     ],
-    image: "https://images.pexels.com/photos/6585752/pexels-photo-6585752.jpeg",
+    image: "/painting2.jpg",
     gallery: [
-      "https://images.pexels.com/photos/1573827/pexels-photo-1573827.jpeg",
-      "https://images.pexels.com/photos/1573828/pexels-photo-1573828.jpeg",
-      "https://images.pexels.com/photos/6476584/pexels-photo-6476584.jpeg"
+      "/painting1.jpg",
+      "/painting3.jpg",
+      "/painting4.jpg"
     ]
   },
   {
@@ -403,11 +403,12 @@ export const services: Service[] = [
       "Structural, MEP, and finishes",
       "Handover-ready cleaning and snagging"
     ],
-    image: "https://images.pexels.com/photos/3990359/pexels-photo-3990359.jpeg",
+    image: "/renovation2.jpg",
     gallery: [
-      "https://images.pexels.com/photos/3990358/pexels-photo-3990358.jpeg",
-      "https://images.pexels.com/photos/3990357/pexels-photo-3990357.jpeg",
-      "https://images.pexels.com/photos/6587830/pexels-photo-6587830.jpeg"
+      "/renovation1.jpg",
+      "/renovation3.jpg",
+      "/renovation4.jpg",
+      "/renovation5.jpg"
     ]
   },
   {
@@ -422,10 +423,10 @@ export const services: Service[] = [
     "Hidden lighting and LED cove integration",
     "Acoustic and thermal solutions"
   ],
-  image: "https://images.pexels.com/photos/6585752/pexels-photo-6585752.jpeg",
+  image: "/CielingWork.jpg",
   gallery: [
-    "https://images.pexels.com/photos/6585768/pexels-photo-6585768.jpeg",
-    "https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg",
+    "/CielingWork1.jpg",
+    "/CielingWork2.jpg",
     "https://images.pexels.com/photos/37347/office-computer-business-headquarters.jpg"
   ]
 }
@@ -442,9 +443,9 @@ export const services: Service[] = [
     "Material selection and finishes",
     "Turnkey interior execution"
   ],
-  image: "https://images.pexels.com/photos/6585759/pexels-photo-6585759.jpeg",
+  image: "/Interior.jpg",
   gallery: [
-    "https://images.pexels.com/photos/6585752/pexels-photo-6585752.jpeg",
+    "/Interior1.jpg",
     "https://images.pexels.com/photos/6588586/pexels-photo-6588586.jpeg",
     "https://images.pexels.com/photos/6585768/pexels-photo-6585768.jpeg"
   ]
@@ -462,11 +463,11 @@ export const services: Service[] = [
     "Weather-resistant coating systems",
     "Custom architectural elevation detailing"
   ],
-  image: "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
+  image: "/roofing1.jpg",
   gallery: [
-    "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg",
-    "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
-    "https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg"
+    "/roofing2.jpg",
+    "/roofing3.jpg",
+    "/roofing4.jpg"
   ]
 }
 ,
@@ -482,11 +483,11 @@ export const services: Service[] = [
     "Waterproofing and levelling",
     "High-precision tile cutting and finishing"
   ],
-  image: "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg",
+  image: "/tilework11.jpg",
   gallery: [
-    "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
-    "https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg",
-    "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg"
+    "/tilework12.jpg",
+    "/tilework13.jpeg",
+    "/tilework14.jpeg"
   ]
 }
 ,
@@ -502,11 +503,11 @@ export const services: Service[] = [
     "Moisture-resistant installation",
     "Skirting & edge finishing"
   ],
-  image: "https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg",
+  image: "/flooring1.jpg",
   gallery: [
-    "https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg",
-    "https://images.pexels.com/photos/373911/pexels-photo-373911.jpeg",
-    "https://images.pexels.com/photos/373910/pexels-photo-373910.jpeg"
+    "/flooring2.jpg",
+    "/flooring3.jpeg",
+    "/flooring4.jpeg"
   ]
 }
 ,
@@ -522,11 +523,11 @@ export const services: Service[] = [
     "Plumbing, electrical & appliance setup",
     "Smart layout optimization"
   ],
-  image: "https://images.pexels.com/photos/37347/office-computer-business-headquarters.jpg",
+  image: "/Kitchen.jpg",
   gallery: [
-    "https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg",
-    "https://images.pexels.com/photos/6585768/pexels-photo-6585768.jpeg",
-    "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg"
+    "/Kitchen.jpg",
+    "/Kitchen1.jpg",
+    "/kitchen3.jpg"
   ]
 }
 ,

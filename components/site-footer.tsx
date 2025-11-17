@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 const address =
-  "Office No.62, 1st Floor, Tanvi Business Center, Al Maktoum Road, Dubai - UAE";
+  "Office No.62, 1st Floor, Tanvi Business Center Al Maktoum Road, Dubai-UAE";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -12,6 +13,7 @@ export function SiteFooter() {
     <footer className="border-t bg-muted/30">
       <div className="container py-8 text-sm text-muted-foreground">
         <div className="grid gap-6 md:grid-cols-4">
+          {/* About */}
           <div>
             <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
               QuickAccess DXB
@@ -20,7 +22,36 @@ export function SiteFooter() {
               Fit out, renovation and maintenance specialists transforming
               homes, offices and retail spaces across Dubai.
             </p>
+
+            {/* Social Icons */}
+            <div className="mt-4 flex items-center gap-3">
+              <Link
+                href="https://facebook.com"
+                target="_blank"
+                className="rounded-full p-2 hover:bg-accent transition"
+              >
+                <Facebook className="h-4 w-4" />
+              </Link>
+
+              <Link
+                href="https://instagram.com"
+                target="_blank"
+                className="rounded-full p-2 hover:bg-accent transition"
+              >
+                <Instagram className="h-4 w-4" />
+              </Link>
+
+              <Link
+                href="https://linkedin.com"
+                target="_blank"
+                className="rounded-full p-2 hover:bg-accent transition"
+              >
+                <Linkedin className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
+
+          {/* Quick Links */}
           <div>
             <h4 className="mb-3 text-sm font-semibold text-foreground">
               Quick Links
@@ -48,6 +79,8 @@ export function SiteFooter() {
               </li>
             </ul>
           </div>
+
+          {/* Timings */}
           <div>
             <h4 className="mb-3 text-sm font-semibold text-foreground">
               Office Timings
@@ -57,12 +90,14 @@ export function SiteFooter() {
             </p>
             <p className="mt-3 text-xs leading-relaxed">{address}</p>
           </div>
+
+          {/* Contact */}
           <div>
             <h4 className="mb-3 text-sm font-semibold text-foreground">
               Contact
             </h4>
             <p className="text-xs leading-relaxed">
-              Phone / WhatsApp: +971 50 000 0000
+              Phone / WhatsApp: +971 55 817 7611
               <br />
               Email: info@quickaccessdxb.com
             </p>

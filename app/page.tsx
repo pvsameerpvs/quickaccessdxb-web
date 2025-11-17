@@ -20,6 +20,7 @@ export default function HomePage() {
         subtitle="Complete interior, renovation, fit-out, maintenance, technical and repair services for homes and businesses."
         items={serviceItems}
         baseHref="/services"
+        limit={6}
       />
       <ValuesSection />
       <ServiceGrid
@@ -27,6 +28,7 @@ export default function HomePage() {
         subtitle="Painting, renovation, ceiling work, interior, roof elevation, floor tiles and kitchen."
         items={projectItems}
         baseHref="/projects"
+        limit={6}
       />
 
       <WhyChooseSection />

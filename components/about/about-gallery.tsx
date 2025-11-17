@@ -30,7 +30,7 @@ export function AboutGallery() {
         viewport={{ once: true, amount: 0.2 }}
       >
         <Image
-          src="https://images.pexels.com/photos/6587830/pexels-photo-6587830.jpeg"
+          src="/hero-main4.jpg"
           alt="Modern office interior"
           fill
           className="object-cover"

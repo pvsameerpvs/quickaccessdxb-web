@@ -10,21 +10,21 @@ import { Button } from "@/components/ui/button";
 const slides = [
   {
     id: 0,
-    image: "/hero.jpg",
+    image: "/hero-main1.jpg",
     eyebrow: "INTERIOR · FIT OUT · RENOVATION",
     title: "Spaces crafted for",
     highlight: "modern living",
   },
   {
     id: 1,
-    image: "/hero1.jpg",
+    image: "/hero-main3.jpg",
     eyebrow: "OFFICE · COMMERCIAL · WORKSPACES",
     title: "Workspaces built for",
     highlight: "productivity",
   },
   {
     id: 2,
-    image: "/hero2.jpg",
+    image: "/hero-main4.jpg",
     eyebrow: "MAINTENANCE · TECHNICAL SERVICES",
     title: "Technical services that",
     highlight: "just work",

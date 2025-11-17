@@ -33,7 +33,7 @@ const blogPosts: BlogPost[] = [
       "From approvals to budgeting, here’s how homeowners and businesses can prepare for a smooth renovation project in Dubai.",
     category: "Renovation",
     readTime: "5 min read",
-    image: "/hero.jpg",
+    image: "/how-to-plan.jpeg",
   },
   {
     slug: "fit-out-regulations-dubai",
@@ -42,7 +42,7 @@ const blogPosts: BlogPost[] = [
       "Understanding DCD, Dubai Municipality, and community approvals is essential before starting any fit-out work.",
     category: "Fit-Out Compliance",
     readTime: "6 min read",
-    image: "/hero.jpg",
+    image: "/Dubai-Fit-Out.jpeg",
   },
   {
     slug: "annual-maintenance-checklist",
@@ -51,7 +51,7 @@ const blogPosts: BlogPost[] = [
       "AC servicing, waterproofing, electrical checks and more — prevent expensive repairs with this yearly guide.",
     category: "Maintenance",
     readTime: "4 min read",
-    image: "/hero.jpg",
+    image: "/Annual-Maintenance.jpeg",
   },
   {
     slug: "smart-interior-upgrades",
@@ -60,7 +60,7 @@ const blogPosts: BlogPost[] = [
       "Lighting, layout, built-ins and finishes that significantly boost aesthetics and resale value.",
     category: "Interior Design",
     readTime: "5 min read",
-    image: "/hero.jpg",
+    image: "/SmartInteriorUpgrades.jpeg",
   },
 ];
 
@@ -70,43 +70,43 @@ const socialItems: SocialItem[] = [
     type: "reel",
     platform: "Instagram",
     title: "Before & After: Dubai Apartment Renovation",
-    url: "https://www.instagram.com/reel/DOptbgFk-8M/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    thumbnail: "/images/social/ig-reel-before-after.jpg",
+    url: "https://www.instagram.com/reel/DQv2joXDvrR/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    thumbnail: "/socialmedia.png",
   },
   {
     id: "ig-post-1",
     type: "post",
     platform: "Instagram",
     title: "Site Progress – Fit-Out in Business Bay",
-    url: "https://www.instagram.com/yourprofile",
-    thumbnail: "/images/social/ig-post-site-progress.jpg",
+    url: "https://www.instagram.com/reel/DRCJdftkvY4/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    thumbnail: "/socialmedia.png",
   },
   {
     id: "tt-reel-1",
     type: "reel",
-    platform: "TikTok",
+    platform: "Instagram",
     title: "1-Minute Maintenance Tips for Dubai Homes",
-    url: "https://www.tiktok.com/@yourprofile",
-    thumbnail: "/images/social/tiktok-reel-tips.jpg",
+    url: "https://www.instagram.com/reel/DOptbgFk-8M/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    thumbnail: "/socialmedia.png",
   },
   {
     id: "li-post-1",
     type: "post",
-    platform: "LinkedIn",
+    platform: "Instagram",
     title: "Why Scheduled Maintenance Saves Money Long-Term",
-    url: "https://www.linkedin.com/company/yourcompany",
-    thumbnail: "/images/social/linkedin-post-maintenance.jpg",
+    url: "https://www.instagram.com/reel/DOdMTkjiTih/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    thumbnail: "/socialmedia.png",
   },
 ];
 
 export default function BlogPage() {
   return (
     <div className="section-padding bg-gradient-to-b from-background via-background to-muted/40">
-      <div className="container max-w-5xl space-y-10">
+      <div className="container ">
         {/* Parent header */}
-        <header className="space-y-3 text-center">
+        <header className="space-y-3 ">
           <h1 className="section-heading">Blog</h1>
-          <p className="section-subtitle max-w-2xl mx-auto">
+          <p className="section-subtitle">
             Insights, case studies and practical advice on renovation, fit-out
             and maintenance in Dubai.
           </p>

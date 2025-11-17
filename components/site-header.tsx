@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
@@ -33,9 +34,14 @@ export function SiteHeader() {
         >
           {/* Left: brand */}
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-xs font-medium tracking-[0.3em] text-muted-foreground">
-              QUICKACCESS
-            </span>
+            <Image
+              src="/lodo-quicl.png" // make sure this file exists in /public
+              alt="QuickAccess DXB Logo"
+              width={130}
+              height={32}
+              className="object-contain"
+              priority
+            />
           </Link>
 
           {/* Center: nav (desktop) */}
@@ -56,7 +62,7 @@ export function SiteHeader() {
 
           {/* Right: theme + CTA + mobile menu */}
           <div className="flex items-center gap-2">
-            <div className="hidden md:flex items-center gap-2">
+            <div className="hidden items-center gap-2 md:flex">
               <ModeToggle />
               <Button
                 asChild
