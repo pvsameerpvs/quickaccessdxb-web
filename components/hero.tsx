@@ -1,7 +1,6 @@
 "use client";
 
-import type React from "react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -43,194 +42,28 @@ const textVariants = {
   exit: { opacity: 0, y: -10 },
 };
 
-type Ripple = {
-  x: number;
-  y: number;
-  radius: number;
-  alpha: number;
-  vy: number; // vertical speed
-  vx: number; // horizontal drift
-};
+// bubble colors
+const bubbleColors = ["#fef9c3", "#fcd34d", "#fed7aa", "#e5e7eb", "#ffffff"];
+
+// random bubbles
+const bubbles = Array.from({ length: 90 }).map((_, i) => ({
+  id: i,
+  top: `${5 + Math.random() * 85}%`,
+  left: `${5 + Math.random() * 90}%`,
+  size: 3 + Math.random() * 9,
+  color: bubbleColors[Math.floor(Math.random() * bubbleColors.length)],
+  delay: Math.random() * 4,
+}));
 
 export function Hero() {
   const [current, setCurrent] = useState(0);
 
-  // ============== BUBBLE CANVAS ==============
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const ripplesRef = useRef<Ripple[]>([]);
-  const lastSpawnRef = useRef<number>(0);
-
-  // Resize canvas to screen
+  // Auto-slide
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    resize();
-    window.addEventListener("resize", resize);
-    return () => window.removeEventListener("resize", resize);
-  }, []);
-
-  // Draw & animate bubbles
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let frameId: number;
-
-    const render = () => {
-      const { width, height } = canvas;
-      ctx.clearRect(0, 0, width, height);
-
-      const ripples = ripplesRef.current;
-
-      for (let i = 0; i < ripples.length; i++) {
-        const r = ripples[i];
-
-        // move bubble gently
-        r.y -= r.vy;
-        r.x += r.vx;
-
-        // very subtle growth
-        r.radius += 0.015;
-
-        // faster fade -> fewer visible overall
-        r.alpha -= 0.0018;
-
-        if (
-          r.alpha <= 0 ||
-          r.y + r.radius < 0 ||
-          r.x + r.radius < 0 ||
-          r.x - r.radius > width
-        ) {
-          continue;
-        }
-
-        ctx.beginPath();
-        ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
-
-        // soft fill
-        ctx.fillStyle = `rgba(255, 255, 255, ${r.alpha * 0.25})`;
-        ctx.fill();
-
-        // gentle outline
-        ctx.lineWidth = 0.8;
-        ctx.strokeStyle = `rgba(255, 255, 255, ${r.alpha * 0.9})`;
-        ctx.stroke();
-      }
-
-      // keep only visible bubbles
-      ripplesRef.current = ripples.filter(
-        (r) =>
-          r.alpha > 0 &&
-          r.y + r.radius > 0 &&
-          r.x + r.radius > 0 &&
-          r.x - r.radius < width
-      );
-
-      frameId = requestAnimationFrame(render);
-    };
-
-    render();
-    return () => cancelAnimationFrame(frameId);
-  }, []);
-
-  // Smaller bubbles
-  const pushBubble = (x: number, y: number, sizeScale = 1) => {
-    const baseRadius = 1 + Math.random() * 2.2; // smaller base size
-    ripplesRef.current.push({
-      x,
-      y,
-      radius: baseRadius * sizeScale,
-      alpha: 0.45 + Math.random() * 0.25,
-      vy: 0.08 + Math.random() * 0.16,
-      vx: (Math.random() - 0.5) * 0.22,
-    });
-  };
-
-  const spawnRipple = (clientX: number, clientY: number) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const rect = canvas.getBoundingClientRect();
-
-    const x = clientX - rect.left;
-    const y = clientY - rect.top;
-
-    // even fewer per pointer move
-    for (let i = 0; i < 2; i++) {
-      const offsetX = x + (Math.random() - 0.5) * 20;
-      const offsetY = y + (Math.random() - 0.5) * 20;
-      pushBubble(offsetX, offsetY, 0.7 + Math.random() * 0.2); // smaller
-    }
-  };
-
-  // Initial calm fill — fewer, smaller bubbles
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const { width, height } = canvas;
-
-    const initialCount = 140;
-    for (let i = 0; i < initialCount; i++) {
-      const x = Math.random() * width;
-      const y = Math.random() * height;
-      pushBubble(x, y, 0.5 + Math.random() * 0.5);
-    }
-  }, []);
-
-  // Ambient bubbles
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const canvas = canvasRef.current;
-      if (!canvas) return;
-
-      const { width, height } = canvas;
-
-      // bottom bubbles (rising up)
-      const bottomCount = 2;
-      for (let i = 0; i < bottomCount; i++) {
-        const x = Math.random() * width;
-        const y = height + Math.random() * (height * 0.3);
-        pushBubble(x, y, 0.7 + Math.random() * 0.3);
-      }
-
-      // random bubbles anywhere
-      const randomCount = 3;
-      for (let i = 0; i < randomCount; i++) {
-        const x = Math.random() * width;
-        const y = Math.random() * height;
-        pushBubble(x, y, 0.5 + Math.random() * 0.4);
-      }
-    }, 160); // slower interval
-
-    return () => clearInterval(interval);
-  }, []);
-
-  // Gentle bubble burst when slide changes
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const { width, height } = canvas;
-
-    const burstCount = 14;
-    for (let i = 0; i < burstCount; i++) {
-      const x = Math.random() * width;
-      const y = height * 0.45 + Math.random() * (height * 0.4);
-      pushBubble(x, y, 0.8 + Math.random() * 0.3); // slightly smaller
-    }
-  }, [current]);
-
-  // ============== SLIDES ==============
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 10000); // 10 seconds
+    const interval = setInterval(
+      () => setCurrent((prev) => (prev + 1) % slides.length),
+      10000
+    );
     return () => clearInterval(interval);
   }, []);
 
@@ -240,34 +73,9 @@ export function Hero() {
   const goPrev = () =>
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
-  // ============== POINTER HANDLERS (ONLY FOR BUBBLES) ==============
-  const onMouseMove = (e: React.MouseEvent) => {
-    const now = performance.now();
-    if (now - lastSpawnRef.current > 110) {
-      // slower spawn from cursor
-      lastSpawnRef.current = now;
-      spawnRipple(e.clientX, e.clientY);
-    }
-  };
-
-  const onTouchMove = (e: React.TouchEvent) => {
-    const t = e.touches?.[0];
-    if (!t) return;
-    const now = performance.now();
-    if (now - lastSpawnRef.current > 110) {
-      lastSpawnRef.current = now;
-      spawnRipple(t.clientX, t.clientY);
-    }
-  };
-
-  // ============== RENDER ==============
   return (
-    <section
-      className="relative h-screen overflow-hidden bg-black"
-      onMouseMove={onMouseMove}
-      onTouchMove={onTouchMove}
-    >
-      {/* Background + looping zoom */}
+    <section className="relative h-screen overflow-hidden bg-black">
+      {/* BG */}
       <div
         className="absolute inset-0 z-0 overflow-hidden"
         style={{ perspective: 1400 }}
@@ -281,20 +89,17 @@ export function Hero() {
             exit="exit"
             transition={{ duration: 0.7, ease: "easeInOut" }}
             className="absolute inset-0"
-            style={{
-              transformStyle: "preserve-3d",
-            }}
+            style={{ transformStyle: "preserve-3d" }}
           >
             <motion.div
               className="absolute inset-0 rounded-[40px] overflow-hidden"
-              style={{
-                transformOrigin: "center center",
-              }}
-              animate={{ scale: [1.03, 1.15, 1.03] }} // faster, stronger zoom loop
+              style={{ transformOrigin: "center center" }}
+              animate={{ scale: [1.03, 1.18] }}
               transition={{
-                duration: 10, // faster loop (was 18)
+                duration: 14,
                 repeat: Infinity,
-                ease: "easeInOut",
+                repeatType: "loop",
+                ease: "easeOut",
               }}
             >
               <Image
@@ -304,26 +109,70 @@ export function Hero() {
                 priority
                 className="object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/10" />
 
-              {/* glassy dark overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-black/10" />
-
-              {/* static glass highlight */}
               <div className="pointer-events-none absolute -inset-20 mix-blend-screen">
-                <div className="h-full w-full bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.45),transparent_55%)] opacity-60" />
+                <div className="h-full w-full bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.25),transparent_55%)] opacity-70" />
               </div>
             </motion.div>
           </motion.div>
         </AnimatePresence>
       </div>
 
-      {/* Bubbles overlay */}
-      <canvas
-        ref={canvasRef}
-        className="pointer-events-none absolute inset-0 z-10"
-      />
+      {/* FAST FLOATING BUBBLES */}
+      <div className="pointer-events-none absolute inset-0 z-10">
+        {bubbles.map((b) => {
+          const isWarm =
+            b.color === "#fef9c3" ||
+            b.color === "#fcd34d" ||
+            b.color === "#fed7aa";
 
-      {/* Title area */}
+          return (
+            <motion.span
+              key={b.id}
+              className="absolute rounded-full"
+              style={{
+                width: b.size,
+                height: b.size,
+                top: b.top,
+                left: b.left,
+                backgroundColor: b.color,
+                opacity: 0.45,
+                boxShadow: isWarm
+                  ? "0 0 18px rgba(249, 200, 90, 0.35)"
+                  : "0 0 12px rgba(255, 255, 255, 0.30)",
+              }}
+              animate={{
+                x: [
+                  "0%",
+                  `${Math.random() * 140 - 70}%`, // much larger & faster horizontal movement
+                  `${Math.random() * 200 - 100}%`,
+                  `${Math.random() * 120 - 60}%`,
+                  "0%",
+                ],
+                y: [
+                  "0%",
+                  `${Math.random() * 140 - 70}%`, // much larger & faster vertical movement
+                  `${Math.random() * 200 - 100}%`,
+                  `${Math.random() * 120 - 60}%`,
+                  "0%",
+                ],
+                opacity: [0.25, 0.9, 0.5, 0.85, 0.25],
+                scale: [1, 1.25, 1.1, 1.3, 1],
+              }}
+              transition={{
+                duration: 5 + (b.id % 3), // ⚡ MUCH faster (was ~12–18s)
+                repeat: Infinity,
+                repeatType: "mirror",
+                ease: "easeInOut",
+                delay: b.delay * 0.3,
+              }}
+            />
+          );
+        })}
+      </div>
+
+      {/* TEXT */}
       <div className="relative z-20 flex h-full items-center pt-[6rem]">
         <div className="container">
           <AnimatePresence mode="wait">
@@ -349,11 +198,10 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Bottom metadata + controls */}
+      {/* BOTTOM INFO */}
       <div className="absolute bottom-8 left-0 right-0 z-20">
         <div className="container">
           <div className="flex flex-col gap-6 text-[11px] text-white/80 md:flex-row md:items-end md:justify-between">
-            {/* Left */}
             <div className="max-w-xs space-y-1">
               <p className="text-[10px] uppercase tracking-[0.25em] text-white/60">
                 PROJECT
@@ -362,7 +210,6 @@ export function Hero() {
               <p>// Residential & Commercial</p>
             </div>
 
-            {/* Middle */}
             <div className="max-w-md space-y-2">
               <p className="text-[10px] uppercase tracking-[0.25em] text-white/60">
                 DESCRIPTION
@@ -373,7 +220,6 @@ export function Hero() {
               </p>
             </div>
 
-            {/* Right – CTA + slider controls */}
             <div className="flex items-end justify-between gap-4 md:justify-end">
               <Button
                 asChild
