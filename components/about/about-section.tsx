@@ -26,38 +26,23 @@ const fadeRight = {
 
 export function AboutSection() {
   return (
-    <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.6fr] ">
-      {/* LEFT COLUMN — SLIDE FROM LEFT */}
+    <section className="space-y-10">
+      {/* TOP — ABOUT US (LEFT-ALIGNED INSIDE CENTERED CONTAINER) */}
       <motion.div
-        className="space-y-6"
+        className="mx-auto max-w-5xl"
         variants={fadeLeft}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <p className="text-3xl font-semibold leading-tight md:text-4xl">
-          About
-          <br />
-          <span className="italic">Quick Access</span>
+        <p className="text-3xl font-semibold leading-tight md:text-4xl text-left">
+          About Us
         </p>
-
-        <motion.div
-          className="relative h-48 w-full overflow-hidden rounded-3xl md:h-56"
-          whileHover={{ y: -4, scale: 1.02 }}
-          transition={{ type: "spring", stiffness: 200, damping: 18 }}
-        >
-          <Image
-            src="/hero-main2.jpg"
-            alt="About Quick Access"
-            fill
-            className="object-cover"
-          />
-        </motion.div>
       </motion.div>
 
-      {/* RIGHT COLUMN — SLIDE FROM RIGHT */}
+      {/* MIDDLE — TEXT BLOCK (CENTERED BLOCK) */}
       <motion.div
-        className="relative space-y-4 text-sm leading-relaxed text-muted-foreground md:text-base"
+        className="relative mx-auto max-w-5xl space-y-4 text-sm leading-relaxed text-muted-foreground md:text-base"
         variants={fadeRight}
         initial="hidden"
         whileInView="show"
@@ -66,16 +51,11 @@ export function AboutSection() {
         {/* Background Logo */}
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
           <Image
-            src="/lodo-quicl.png"
+            src="/lodo-quicl2.png"
             alt="QuickAccess Logo"
-            width={420}
-            height={420}
-            className="
-        opacity-[.5]
-        object-contain
-        select-none
-        blur-[1px]
-      "
+            width={650}
+            height={650}
+            className="opacity-50 object-contain select-none blur-[1px]"
           />
         </div>
 
@@ -89,7 +69,7 @@ export function AboutSection() {
           </p>
 
           <p>
-            With a focus on soft minimalism material tactility, and well-being,
+            With a focus on soft minimalism, material tactility, and well-being,
             we design and deliver spaces that connect deeply with people and
             place.
           </p>
@@ -121,6 +101,8 @@ export function AboutSection() {
           </p>
         </div>
       </motion.div>
-    </div>
+
+      {/* BOTTOM — IMAGES */}
+    </section>
   );
 }

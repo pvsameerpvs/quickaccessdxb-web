@@ -47,14 +47,8 @@ export default function ServiceDetailPage({ params }: Props) {
     <div className="section-padding relative overflow-hidden">
       {/* Logo-based background */}
       <div className="pointer-events-none absolute inset-0">
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(145deg, #FDBA21 0%, #FF8A1E 45%, #E44828 100%)",
-            opacity: 0.12,
-          }}
-        />
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-background to-orange-500/5" />
+
         <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[#FDBA21]/20 blur-3xl" />
         <div className="absolute -bottom-32 -left-10 h-80 w-80 rounded-full bg-[#E44828]/18 blur-3xl" />
       </div>

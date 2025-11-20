@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import type { Service } from "@/lib/data";
+import { FavoriteProjectDubaiSportsCity } from "./FavoriteProjectDubaiSportsCity";
 
 export function ServiceGrid({
   title,
@@ -27,7 +28,7 @@ export function ServiceGrid({
       {/* BG: logo-inspired gradient + bubbles */}
       <div className="pointer-events-none absolute inset-0">
         {/* base gradient (logo colors) */}
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-background to-orange-500/5" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#fa8f4d] via-[#fa8f4d] to-[#fa8f4d]/15" />
 
         {/* soft bubbles */}
         <div className="absolute -top-24 -right-16 h-64 w-64 rounded-full bg-amber-400/15 blur-3xl" />

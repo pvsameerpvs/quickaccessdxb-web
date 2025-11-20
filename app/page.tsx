@@ -6,6 +6,7 @@ import { WhyChooseSection } from "@/components/why-choose-section";
 import { FaqSection } from "@/components/faq-section";
 import AboutPage from "./about/page";
 import { SupportPill } from "@/components/support-pill";
+import { FavoriteProjectDubaiSportsCity } from "@/components/FavoriteProjectDubaiSportsCity";
 
 export default function HomePage() {
   const serviceItems = getServicesByCategory("service");
@@ -23,6 +24,7 @@ export default function HomePage() {
         limit={6}
       />
       <ValuesSection />
+
       <ServiceGrid
         title="Projects"
         subtitle="Painting, renovation, ceiling work, interior, roof elevation, floor tiles and kitchen."
@@ -30,7 +32,7 @@ export default function HomePage() {
         baseHref="/projects"
         limit={6}
       />
-
+      <FavoriteProjectDubaiSportsCity />
       <WhyChooseSection />
       <FaqSection />
     </>

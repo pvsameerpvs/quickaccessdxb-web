@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 const slides = [
   {
     id: 0,
-    image: "/hero-main1.jpg",
+    image: "/hero-main4.jpg",
     eyebrow: "INTERIOR · FIT OUT · RENOVATION",
     title: "Spaces crafted for",
     highlight: "modern living",
@@ -23,7 +23,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "/hero-main4.jpg",
+    image: "/hero-main41.jpg",
     eyebrow: "MAINTENANCE · TECHNICAL SERVICES",
     title: "Technical services that",
     highlight: "just work",

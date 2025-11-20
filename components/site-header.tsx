@@ -25,19 +25,35 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // Close mobile sheet whenever the route changes
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40">
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-40 pt-2 transition-all duration-300",
+
+        pathname === "/"
+          ? "bg-transparent" // Home
+          : ["/about", "/career", "/blog", "/contact"].includes(pathname)
+          ? "bg-white" // These pages → white nav
+          : "bg-gradient-to-br from-[#fa8f4d] via-[#fa8f4d] to-[#fa8f4d]" // Others
+      )}
+    >
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="mt-4 flex h-14 items-center justify-between rounded-full bg-background/70 px-5 shadow-sm backdrop-blur-xl md:h-16 md:px-7"
+          className="
+  mt-4 flex h-14 items-center justify-between
+  rounded-full px-5 md:h-16 md:px-7
+  bg-white
+  border border-[#fa8f4d] 
+  shadow-[0_4px_20px_rgba(0,0,0,0.12)]
+  backdrop-blur-xl
+"
         >
           {/* Left: brand */}
           <Link href="/" className="flex items-center gap-2">
@@ -67,14 +83,14 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          {/* Right: theme + CTA + mobile menu */}
+          {/* Right side */}
           <div className="flex items-center gap-2">
             <div className="hidden items-center gap-2 md:flex">
-              <ModeToggle />
+              {/* <ModeToggle /> */}
               <Button
                 asChild
                 size="sm"
-                className="rounded-full px-5 text-xs font-medium"
+                className="rounded-full px-5 text-xs font-medium bg-[#fa8f4d] text-white hover:bg-[#e6763f]"
               >
                 <Link href="/contact">Contact Us</Link>
               </Button>
@@ -92,6 +108,7 @@ export function SiteHeader() {
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
+
               <SheetContent>
                 <nav className="mt-4 flex flex-col gap-3">
                   {navItems.map((item) => (
@@ -102,12 +119,12 @@ export function SiteHeader() {
                         "rounded-2xl px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground",
                         pathname === item.href && "bg-accent text-foreground"
                       )}
-                      // optional: close immediately on click (even before route finishes)
                       onClick={() => setOpen(false)}
                     >
                       {item.label}
                     </Link>
                   ))}
+
                   <Button
                     asChild
                     className="mt-4 rounded-2xl"

@@ -26,9 +26,12 @@ const faqs = [
 
 export function FaqSection() {
   return (
-    <section className="section-padding bg-muted/40">
-      <div className="container ">
-        <div className="grid gap-14 lg:grid-cols-[0.9fr,1.3fr] items-start">
+    <section className="section-padding relative overflow-hidden">
+      {/* background gradient */}
+      <div className="pointer-events-none absolute inset-0  bg-gradient-to-br from-[#fa8f4d] via-[#fa8f4d] to-[#fa8f4d]/15" />
+
+      <div className="container relative">
+        <div className="grid items-start gap-14 lg:grid-cols-[0.9fr,1.3fr]">
           {/* LEFT SIDE — STAYS AT TOP */}
           <div className="space-y-4">
             <p className="text-xs uppercase tracking-[0.2em] text-primary/70">
@@ -37,7 +40,7 @@ export function FaqSection() {
             <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
               Frequently Asked Questions
             </h2>
-            <p className="text-sm text-muted-foreground md:text-base max-w-sm">
+            <p className="max-w-sm text-sm text-muted-foreground md:text-base section-subtitle">
               Answers to common questions about our fit out, renovation and
               maintenance services.
             </p>
