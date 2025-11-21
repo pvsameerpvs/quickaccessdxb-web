@@ -22,7 +22,7 @@ export function FavoriteProjectDubaiSportsCity() {
   return (
     <section className="section-padding relative overflow-hidden">
       {/* 🔥 MAIN BACKGROUND GRADIENT */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#fa8f4d] via-[#fa8f4d] to-[#fa8f4d]/15" />
+     <div className="absolute inset-0 bg-gradient-to-br from-[#f5c26b] via-[#fa8f4d] to-[#fa6a1e]" />
 
       <div className="container relative">
         <motion.div

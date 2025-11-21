@@ -1,3 +1,4 @@
+// app/services/[slug]/page.tsx
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,7 +7,7 @@ import { ArrowLeft, Clock, ShieldCheck, PhoneCall, Wrench } from "lucide-react";
 import { getServiceBySlug, getServicesByCategory } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 
-type Props = {
+type ServiceDetailPageProps = {
   params: { slug: string };
 };
 
@@ -15,7 +16,9 @@ export function generateStaticParams() {
   return items.map((item) => ({ slug: item.slug }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: ServiceDetailPageProps): Promise<Metadata> {
   const service = getServiceBySlug(params.slug);
 
   if (!service || service.category !== "service") {
@@ -36,22 +39,60 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function ServiceDetailPage({ params }: Props) {
+export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
   const service = getServiceBySlug(params.slug);
 
   if (!service || service.category !== "service") {
     notFound();
   }
 
+  // Helper: render description normally or as checklist (✔ ...)
+  const renderDescription = () => {
+    if (!service.description) return null;
+
+    const hasChecklist = service.description.includes("✔");
+
+    if (!hasChecklist) {
+      return (
+        <p className="section-subtitle max-w-2xl text-sm text-muted-foreground md:text-base">
+          {service.description}
+        </p>
+      );
+    }
+
+    const lines = service.description
+      .split("✔")
+      .map((line) => line.trim())
+      .filter(Boolean);
+
+    return (
+      <div className="section-subtitle max-w-2xl space-y-2">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+          Key services included
+        </p>
+        <ul className="grid gap-1.5 text-xs text-muted-foreground md:text-sm">
+          {lines.map((line) => (
+            <li key={line} className="flex gap-2">
+              <span className="mt-[6px] inline-block h-1.5 w-1.5 rounded-full bg-[#FF8A1E]" />
+              <span>{line}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+
   return (
     <div className="section-padding relative overflow-hidden">
       {/* Logo-based background */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-background to-orange-500/5" />
-
         <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[#FDBA21]/20 blur-3xl" />
         <div className="absolute -bottom-32 -left-10 h-80 w-80 rounded-full bg-[#E44828]/18 blur-3xl" />
       </div>
+
+      {/* Full orange gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#f5c26b] via-[#fa8f4d] to-[#fa6a1e]" />
 
       <div className="container relative space-y-8">
         {/* Top Bar */}
@@ -68,7 +109,7 @@ export default function ServiceDetailPage({ params }: Props) {
             </Link>
           </Button>
 
-          <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
+          <div className="flex items-center gap-2 text-xs font-medium section-subtitle">
             <Link href="/" className="transition-colors hover:text-foreground">
               Home
             </Link>
@@ -90,9 +131,10 @@ export default function ServiceDetailPage({ params }: Props) {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] xl:gap-14">
           {/* Left: Main Content */}
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-2xl border border-[#FF8A1E]/40 bg-[#FF8A1E]/8 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#FF8A1E]">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 rounded-2xl border border-[#FF8A1E]/40 bg-[#FF8A1E]/8 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] section-subtitle">
               <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#FF8A1E]/15">
-                <Wrench className="h-3 w-3 text-[#FF8A1E]" />
+                <Wrench className="h-3 w-3 section-subtitle" />
               </span>
               <span>Service &amp; Repairs</span>
             </div>
@@ -101,72 +143,118 @@ export default function ServiceDetailPage({ params }: Props) {
               <h1 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
                 {service.name}
               </h1>
-              <p className="max-w-2xl text-sm text-muted-foreground md:text-base">
-                {service.description}
-              </p>
+
+              {/* Quick metrics */}
+              <div className="grid gap-3 rounded-3xl border border-border/60 bg-background/80 p-4 text-sm md:grid-cols-3 md:p-5">
+                <div className="flex items-start gap-3">
+                  <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-2xl bg-[#FF8A1E]/8">
+                    <Clock className="h-4 w-4 text-[#FF8A1E]" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                      Response time
+                    </p>
+                    <p className="text-sm font-semibold">Same / next-day*</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-2xl bg-[#FF8A1E]/8">
+                    <ShieldCheck className="h-4 w-4 text-[#FF8A1E]" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                      Warranty
+                    </p>
+                    <p className="text-sm font-semibold">Up to 12 months</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-2xl bg-[#FF8A1E]/8">
+                    <PhoneCall className="h-4 w-4 text-[#FF8A1E]" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                      Support
+                    </p>
+                    <p className="text-sm font-semibold">24/7 phone support</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Description or checklist (✔) */}
+              {renderDescription()}
+
+              {/* 🔸 Key highlights from service.highlights */}
+              {service.highlights && service.highlights.length > 0 && (
+                <div className="mt-4 space-y-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] section-subtitle">
+                    Key highlights
+                  </p>
+                  <ul className="grid gap-2 text-xs md:text-sm sm:grid-cols-2">
+                    {service.highlights.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-2 rounded-2xl bg-background/80 px-3 py-2"
+                      >
+                        <span className="mt-[6px] inline-block h-1.5 w-1.5 rounded-full bg-[#FF8A1E]" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
 
-            {/* Quick Info / Highlights */}
-            <div className="grid gap-3 rounded-3xl border border-border/60 bg-background/80 p-4 text-sm md:grid-cols-3 md:p-5">
-              <div className="flex items-start gap-3">
-                <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-2xl bg-[#FF8A1E]/8">
-                  <Clock className="h-4 w-4 text-[#FF8A1E]" />
+            {/* Scope of work & services – accordion UI */}
+            {service.details && service.details.length > 0 && (
+              <div className="space-y-4 pt-2">
+                <div className="flex items-center justify-between gap-3">
+                  <h2 className="text-base font-semibold md:text-lg">
+                    Scope of work &amp; services
+                  </h2>
+                  <span className="text-xs text-muted-foreground">
+                    Tap to expand each section
+                  </span>
                 </div>
-                <div>
-                  <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                    Response time
-                  </p>
-                  <p className="text-sm font-semibold">Same / next-day*</p>
-                </div>
-              </div>
 
-              <div className="flex items-start gap-3">
-                <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-2xl bg-[#FF8A1E]/8">
-                  <ShieldCheck className="h-4 w-4 text-[#FF8A1E]" />
-                </div>
-                <div>
-                  <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                    Warranty
-                  </p>
-                  <p className="text-sm font-semibold">Up to 12 months</p>
-                </div>
-              </div>
+                <div className="space-y-3">
+                  {service.details.map((section, index) => (
+                    <details
+                      key={section.title}
+                      className="group rounded-2xl border border-border/60 bg-background/80 p-3 md:p-4"
+                      {...(index === 0 ? { open: true } : {})}
+                    >
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-3">
+                        <div className="flex items-center gap-2">
+                          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#FF8A1E]/10 text-[11px] font-semibold text-[#FF8A1E]">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <span className="text-sm font-semibold">
+                            {section.title}
+                          </span>
+                        </div>
+                        <span className="flex h-6 w-6 items-center justify-center rounded-full border border-border/60 text-xs text-muted-foreground transition group-open:rotate-45">
+                          +
+                        </span>
+                      </summary>
 
-              <div className="flex items-start gap-3">
-                <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-2xl bg-[#FF8A1E]/8">
-                  <PhoneCall className="h-4 w-4 text-[#FF8A1E]" />
-                </div>
-                <div>
-                  <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                    Support
-                  </p>
-                  <p className="text-sm font-semibold">24/7 phone support</p>
+                      <div className="mt-3 border-t border-border/40 pt-3">
+                        <ul className="space-y-1.5 text-xs text-muted-foreground">
+                          {section.points.map((point) => (
+                            <li key={point} className="flex gap-2">
+                              <span className="mt-[6px] inline-block h-1 w-1 rounded-full bg-[#FF8A1E]" />
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </details>
+                  ))}
                 </div>
               </div>
-            </div>
-
-            {/* Deliverables */}
-            <div className="space-y-3">
-              <div className="flex items-center justify-between gap-3">
-                <h2 className="text-base font-semibold md:text-lg">
-                  What we deliver
-                </h2>
-                <span className="text-xs text-muted-foreground">
-                  Tailored to your specific needs
-                </span>
-              </div>
-              <ul className="grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
-                {service.highlights.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-2 rounded-2xl bg-background/75 px-3 py-2"
-                  >
-                    <span className="mt-[6px] inline-block h-1.5 w-1.5 rounded-full bg-[#FF8A1E]" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            )}
           </div>
 
           {/* Right: Image & CTA */}
@@ -287,7 +375,6 @@ export default function ServiceDetailPage({ params }: Props) {
   );
 }
 
-/** Small presentational component for the “How it works” steps */
 type StepCardProps = {
   step: string;
   title: string;

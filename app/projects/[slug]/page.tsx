@@ -29,6 +29,8 @@ export default function ProjectDetailPage({ params }: Props) {
 
   return (
     <div className="section-padding relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#f5c26b] via-[#fa8f4d] to-[#fa6a1e]" />
+
       {/* logo-based background */}
       <div className="pointer-events-none absolute inset-0">
         <div
@@ -58,7 +60,7 @@ export default function ProjectDetailPage({ params }: Props) {
             </Link>
           </Button>
 
-          <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
+          <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground section-subtitle">
             <Link href="/" className="transition-colors hover:text-foreground">
               Home
             </Link>
@@ -70,7 +72,7 @@ export default function ProjectDetailPage({ params }: Props) {
               Projects
             </Link>
             <span>›</span>
-            <span className="max-w-[10rem] truncate sm:max-w-xs">
+            <span className="max-w-[10rem] truncate sm:max-w-xs ">
               {project.name}
             </span>
           </div>
@@ -82,17 +84,17 @@ export default function ProjectDetailPage({ params }: Props) {
           <div className="space-y-6">
             {/* Label + title */}
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 rounded-2xl border border-[#FF8A1E]/40 bg-[#FF8A1E]/8 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#FF8A1E]">
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#FF8A1E]/15">
-                  <LayoutTemplate className="h-3 w-3 text-[#FF8A1E]" />
+              <div className="inline-flex items-center gap-2 rounded-2xl border border-[#FF8A1E]/40 bg-[#FF8A1E]/8 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#FF8A1E] section-subtitle">
+                <span className="flex h-5 w-5 items-center justify-center section-subtitle rounded-full bg-[#FF8A1E]/15">
+                  <LayoutTemplate className="h-3 w-3 section-subtitle" />
                 </span>
                 <span>Project case study</span>
               </div>
 
-              <h1 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
+              <h1 className="text-3xl font-semibold tracking-tight  md:text-4xl lg:text-5xl">
                 {project.name}
               </h1>
-              <p className="max-w-2xl text-sm text-muted-foreground md:text-base">
+              <p className="max-w-2xl text-sm section-subtitle md:text-base">
                 {project.description}
               </p>
             </div>

@@ -38,9 +38,10 @@ export function SiteHeader() {
           ? "bg-transparent" // Home
           : ["/about", "/career", "/blog", "/contact"].includes(pathname)
           ? "bg-white" // These pages → white nav
-          : "bg-gradient-to-br from-[#fa8f4d] via-[#fa8f4d] to-[#fa8f4d]" // Others
+          : "bg-gradient-to-l from-[#fa6a1e] via-[#fa8f4d] to-[#f5c26b]" 
       )}
     >
+          
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: -10 }}

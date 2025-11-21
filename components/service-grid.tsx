@@ -1,3 +1,4 @@
+// components/ServiceGrid.tsx
 "use client";
 
 import Link from "next/link";
@@ -6,7 +7,14 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import type { Service } from "@/lib/data";
-import { FavoriteProjectDubaiSportsCity } from "./FavoriteProjectDubaiSportsCity";
+
+type ServiceGridProps = {
+  title: string;
+  subtitle: string;
+  items: Service[];
+  baseHref: string;
+  limit?: number;
+};
 
 export function ServiceGrid({
   title,
@@ -14,28 +22,15 @@ export function ServiceGrid({
   items,
   baseHref,
   limit,
-}: {
-  title: string;
-  subtitle: string;
-  items: Service[];
-  baseHref: string;
-  limit?: number;
-}) {
+}: ServiceGridProps) {
   const displayItems = limit ? items.slice(0, limit) : items;
 
   return (
     <section className="relative section-padding overflow-hidden">
-      {/* BG: logo-inspired gradient + bubbles */}
+      {/* BG: logo-inspired gradient */}
       <div className="pointer-events-none absolute inset-0">
-        {/* base gradient (logo colors) */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#fa8f4d] via-[#fa8f4d] to-[#fa8f4d]/15" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#f5c26b] via-[#fa8f4d] to-[#fa6a1e]" />
 
-        {/* soft bubbles */}
-        <div className="absolute -top-24 -right-16 h-64 w-64 rounded-full bg-amber-400/15 blur-3xl" />
-        <div className="absolute -bottom-32 -left-10 h-72 w-72 rounded-full bg-orange-500/10 blur-3xl" />
-
-        {/* vertical accent line on left */}
-        <div className="absolute left-0 top-10 bottom-10 hidden w-px bg-gradient-to-b from-transparent via-amber-400/70 to-transparent md:block" />
       </div>
 
       <div className="container relative space-y-10">
@@ -78,9 +73,6 @@ export function ServiceGrid({
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-
-                  {/* small logo-colored overlay gradient on top of image */}
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
                 </div>
 
                 <CardContent className="space-y-3 p-5">

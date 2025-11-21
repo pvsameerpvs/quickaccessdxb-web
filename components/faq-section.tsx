@@ -28,7 +28,8 @@ export function FaqSection() {
   return (
     <section className="section-padding relative overflow-hidden">
       {/* background gradient */}
-      <div className="pointer-events-none absolute inset-0  bg-gradient-to-br from-[#fa8f4d] via-[#fa8f4d] to-[#fa8f4d]/15" />
+    <div className="absolute inset-0 bg-gradient-to-br from-[#f5c26b] via-[#fa8f4d] to-[#fa6a1e]" />
+
 
       <div className="container relative">
         <div className="grid items-start gap-14 lg:grid-cols-[0.9fr,1.3fr]">
