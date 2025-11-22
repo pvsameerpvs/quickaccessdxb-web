@@ -189,9 +189,9 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
               {/* 🔸 Key highlights from service.highlights */}
               {service.highlights && service.highlights.length > 0 && (
                 <div className="mt-4 space-y-2">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] section-subtitle">
-                    Key highlights
-                  </p>
+                  <h2 className="text-base font-semibold md:text-lg">
+                    Our Services
+                  </h2>
                   <ul className="grid gap-2 text-xs md:text-sm sm:grid-cols-2">
                     {service.highlights.map((item) => (
                       <li
@@ -214,7 +214,7 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
                   <h2 className="text-base font-semibold md:text-lg">
                     Scope of work &amp; services
                   </h2>
-                  <span className="text-xs text-muted-foreground">
+                  <span className="text-xs section-subtitle">
                     Tap to expand each section
                   </span>
                 </div>
@@ -296,7 +296,7 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
               <h3 className="text-sm font-semibold md:text-base">
                 Ready to book this service?
               </h3>
-              <p className="text-xs text-muted-foreground md:text-sm">
+              <p className="text-xs section-subtitle md:text-sm">
                 Share a few details about your issue and our team will get back
                 to you with an exact quote and earliest available slot.
               </p>
@@ -326,7 +326,7 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
                   </a>
                 </Button>
               </div>
-              <p className="text-[11px] text-muted-foreground">
+              <p className="text-[11px] section-subtitle">
                 *Response time depends on location and current schedule.
               </p>
             </div>

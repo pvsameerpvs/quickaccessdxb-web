@@ -35,13 +35,12 @@ export function SiteHeader() {
         "fixed inset-x-0 top-0 z-40 pt-2 transition-all duration-300",
 
         pathname === "/"
-          ? "bg-transparent" 
+          ? "bg-transparent"
           : ["/about", "/career", "/blog", "/contact"].includes(pathname)
-          ? "bg-white" 
-          : "bg-gradient-to-l from-[#fa6a1e] via-[#fa8f4d] to-[#f5c26b]" 
+          ? "bg-white"
+          : "bg-gradient-to-l from-[#fa6a1e] via-[#fa8f4d] to-[#f5c26b]"
       )}
     >
-          
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: -10 }}

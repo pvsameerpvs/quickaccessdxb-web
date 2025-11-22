@@ -159,11 +159,11 @@ export const services: Service[] = [
     }
   ],
 
-  image: "/aprtment-revamp1.jpeg",
+  image: "/appartment-revamp3.jpeg",
   gallery: [
-    "/aprtment-revamp2.jpeg",
-    "/aprtment-revamp3.jpeg",
-    "/aprtment-revamp4.jpeg"
+    "/appartment-revamp1.jpeg",
+    "/appartment-revamp2.jpeg",
+    "/appartment-revamp4.jpeg"
   ]
 }
 ,
@@ -176,18 +176,18 @@ export const services: Service[] = [
   "A complete turnkey restaurant upgrade covering interior transformation, modern design development, full MEP enhancements, commercial kitchen setup, custom furniture and branding elements, advanced lighting ambience, premium finishes, safety compliance and a professionally managed handover for a fully refreshed restaurant experience.",
 
  highlights: [
-  "Complete Renovation Solutions",
-  "Design + Build Services",
-  "3D Designs & Layout Planning",
-  "Civil, Electrical, Plumbing Works",
-  "Custom Carpentry & Modular Kitchen",
-  "Bathroom & Kitchen Remodelling",
-  "Painting & Finishing Works",
-  "Flooring & Tiling Works",
-  "False Ceiling & Lighting Upgrades",
-  "AC & HVAC Installations",
-  "Material Procurement & Supervision",
-  "Turnkey Handover"
+  "End-to-End Renovation (Turnkey)",
+  "Interior Design & 3D Concepts",
+  "MEP Works (HVAC, Electrical, Plumbing)",
+  "Commercial Kitchen Setup",
+  "Custom Furniture Production",
+  "Branding & Signage Solutions",
+  "Lighting Design & Installation",
+  "Flooring, Tiling & Wall Finishes",
+  "Civil Defense & Safety Compliance Support",
+  "Material Procurement & Project Management",
+  "Final Cleaning & Quality Handover",
+ 
 ],
 
 
@@ -323,11 +323,11 @@ export const services: Service[] = [
     }
   ],
 
-  image: "/RestaurantUpgradation1.jpeg",
+  image: "/RestaurantUpgradation1.png",
   gallery: [
-    "/RestaurantUpgradation2.jpeg",
-    "/RestaurantUpgradation3.jpeg",
-    "/RestaurantUpgradation4.jpeg"
+    "/RestaurantUpgradation2.png",
+    "/RestaurantUpgradation3.png",
+    "/RestaurantUpgradation4.png"
   ]
 }
 ,
@@ -440,11 +440,11 @@ export const services: Service[] = [
     }
   ],
 
-  image: "/KitchenRectify1.jpeg",
+  image: "/KitchenRectify4.jpeg",
   gallery: [
     "/KitchenRectify2.jpeg",
     "/KitchenRectify3.jpeg",
-    "/KitchenRectify4.jpeg"
+    "/KitchenRectify1.jpeg"
   ]
 }
 ,
@@ -1136,10 +1136,10 @@ export const services: Service[] = [
     }
   ],
 
-  image: "/painting2.jpg",
+  image: "/toilet-1.jpeg",
   gallery: [
-    "/painting2.jpg",
-    "/painting2.jpg",
+    "/Floor & Wall Design2.jpeg",
+    "/Floor & Wall Design3.jpeg",
     "/painting2.jpg"
   ]
 }
