@@ -21,7 +21,7 @@ const images = [
 export function FavoriteProjectDubaiSportsCity() {
   return (
     <section className="section-padding relative overflow-hidden">
-      {/* 🔥 MAIN BACKGROUND GRADIENT */}
+      
      <div className="absolute inset-0 bg-gradient-to-br from-[#f5c26b] via-[#fa8f4d] to-[#fa6a1e]" />
 
       <div className="container relative">
@@ -34,7 +34,7 @@ export function FavoriteProjectDubaiSportsCity() {
         >
           {/* LEFT — TEXT */}
           <div className="space-y-4">
-            <p className="inline-flex items-center gap-2 rounded-full border border-[#fa8f4d]/40 bg-[#fa8f4d]/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#fa8f4d]">
+            <p className="inline-flex items-center gap-2 rounded-full border border-[#fa8f4d]/40 bg-[#fa8f4d]/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] section-subtitle">
               Favorite Project
             </p>
 
@@ -55,16 +55,16 @@ export function FavoriteProjectDubaiSportsCity() {
             <div className="grid gap-3 text-xs text-muted-foreground md:text-sm">
               <div className="flex gap-6">
                 <div>
-                  <p className="font-medium text-foreground ">Location</p>
+                  <p className="font-bold text-foreground ">Location</p>
                   <p className="section-subtitle">Dubai Sports City, Dubai</p>
                 </div>
                 <div>
-                  <p className="font-medium text-foreground">Scope</p>
+                  <p className="font-bold text-foreground">Scope</p>
                   <p className="section-subtitle">Full studio renovation</p>
                 </div>
               </div>
               <div>
-                <p className="font-medium text-foreground">Highlights</p>
+                <p className="font-bold text-foreground">Highlights</p>
                 <ul className="mt-1 list-disc space-y-1 pl-4 section-subtitle">
                   <li>Custom joinery &amp; smart storage</li>
                   <li>Warm, hotel-style lighting design</li>

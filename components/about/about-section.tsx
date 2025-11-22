@@ -53,8 +53,8 @@ export function AboutSection() {
           <Image
             src="/lodo-quicl2.png"
             alt="QuickAccess Logo"
-            width={650}
-            height={650}
+            width={300}
+            height={300}
             className="opacity-50 object-contain select-none blur-[1px]"
           />
         </div>
@@ -102,7 +102,7 @@ export function AboutSection() {
         </div>
       </motion.div>
 
-      {/* BOTTOM — IMAGES */}
+      
     </section>
   );
 }

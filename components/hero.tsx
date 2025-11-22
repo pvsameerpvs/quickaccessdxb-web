@@ -186,12 +186,12 @@ export function Hero() {
               className="max-w-3xl text-white"
               style={{ transform: "translateZ(40px)" }}
             >
-              <p className="mb-3 text-xs tracking-[0.25em] text-white/70">
+              <p className="mb-3 text-xs tracking-[0.25em] text-[#e6763f]">
                 {currentSlide.eyebrow}
               </p>
-              <h1 className="text-4xl font-semibold tracking-tight md:text-6xl lg:text-7xl">
+              <h1 className="text-4xl font-semibold tracking-tight md:text-6xl lg:text-7xl  ">
                 {currentSlide.title}{" "}
-                <span className="italic">{currentSlide.highlight}</span>.
+                <span className="italic text-[#e6763f] ">{currentSlide.highlight}.</span>
               </h1>
             </motion.div>
           </AnimatePresence>
@@ -199,11 +199,11 @@ export function Hero() {
       </div>
 
       {/* BOTTOM INFO */}
-      <div className="absolute bottom-8 left-0 right-0 z-20">
+      <div className="absolute bottom-8 left-0 right-0 z-20 ">
         <div className="container">
           <div className="flex flex-col gap-6 text-[11px] text-white/80 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-xs space-y-1">
-              <p className="text-[10px] uppercase tracking-[0.25em] text-white/60">
+            <div className="max-w-xs space-y-1 ">
+              <p className="text-[10px] uppercase tracking-[0.25em] text-[#e6763f]">
                 PROJECT
               </p>
               <p>// Dubai, UAE</p>
@@ -211,7 +211,7 @@ export function Hero() {
             </div>
 
             <div className="max-w-md space-y-2">
-              <p className="text-[10px] uppercase tracking-[0.25em] text-white/60">
+              <p className="text-[10px] uppercase tracking-[0.25em] text-[#e6763f]">
                 DESCRIPTION
               </p>
               <p className="text-xs leading-relaxed">
@@ -224,7 +224,7 @@ export function Hero() {
               <Button
                 asChild
                 size="sm"
-                className="rounded-full bg-white/90 px-5 text-xs font-medium text-black hover:bg-white"
+                className="rounded-full px-5 text-xs font-medium bg-[#fa8f4d] text-white hover:bg-[#e6763f]"
               >
                 <Link href="/contact">Request a Quote</Link>
               </Button>

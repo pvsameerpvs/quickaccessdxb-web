@@ -35,9 +35,9 @@ export function SiteHeader() {
         "fixed inset-x-0 top-0 z-40 pt-2 transition-all duration-300",
 
         pathname === "/"
-          ? "bg-transparent" // Home
+          ? "bg-transparent" 
           : ["/about", "/career", "/blog", "/contact"].includes(pathname)
-          ? "bg-white" // These pages → white nav
+          ? "bg-white" 
           : "bg-gradient-to-l from-[#fa6a1e] via-[#fa8f4d] to-[#f5c26b]" 
       )}
     >
@@ -128,7 +128,7 @@ export function SiteHeader() {
 
                   <Button
                     asChild
-                    className="mt-4 rounded-2xl"
+                    className="mt-4 rounded-2xl rounded-full px-5 text-xs font-medium bg-[#fa8f4d] text-white hover:bg-[#e6763f]"
                     onClick={() => setOpen(false)}
                   >
                     <Link href="/contact">Contact Us</Link>
