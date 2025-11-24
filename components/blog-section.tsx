@@ -111,7 +111,8 @@ function BlogModal({ post, onClose }: BlogModalProps) {
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
       onClick={handleBackdropClick}
     >
-      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-hidden rounded-3xl border border-border/70 bg-background shadow-2xl">
+     <div className="relative w-full max-w-2xl max-h-[90vh] overflow-hidden rounded-3xl border border-border/70 
+bg-gradient-to-br from-[#f5c26b] via-[#fa8f4d] to-[#fa6a1e] shadow-2xl text-white">
         {/* Optional image at top */}
         <div className="relative h-40 w-full overflow-hidden rounded-t-3xl">
           <Image
@@ -124,7 +125,7 @@ function BlogModal({ post, onClose }: BlogModalProps) {
         </div>
 
         {/* Header */}
-        <div className="flex items-start justify-between gap-3 border-b border-border/60 px-5 py-3">
+        <div className="flex items-start justify-between gap-3 border-b border-border/60 px-5 py-3 section-subtitle">
           <div className="space-y-1">
             <p className="text-[11px] font-semibold uppercase tracking-wide text-primary">
               {post.category} · {post.readTime}
@@ -142,7 +143,7 @@ function BlogModal({ post, onClose }: BlogModalProps) {
         </div>
 
         {/* Scrollable body */}
-        <div className="max-h-[60vh] overflow-y-auto px-5 py-4 text-sm text-muted-foreground space-y-3">
+        <div className="max-h-[60vh] overflow-y-auto px-5 py-4 section-subtitle text-sm text-muted-foreground space-y-3">
           {paragraphs.map((para, idx) => (
             <p key={idx}>{para}</p>
           ))}

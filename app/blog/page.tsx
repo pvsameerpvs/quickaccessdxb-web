@@ -164,8 +164,20 @@ const socialItems: SocialItem[] = [
 
 export default function BlogPage() {
   return (
-    <div className="section-padding bg-gradient-to-b from-background via-background to-muted/40">
-      <div className="container space-y-8">
+    <div className="section-padding relative overflow-hidden">
+      
+      {/* 🔥 Your required gradient background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#f5c26b] via-[#fa8f4d] to-[#fa6a1e]" />
+
+      {/* Optional soft glow blobs (matches your design style) */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-white/30 blur-3xl opacity-60" />
+        <div className="absolute -bottom-32 -left-10 h-80 w-80 rounded-full bg-black/25 blur-3xl opacity-40" />
+      </div>
+
+      {/* Main content */}
+      <div className="container space-y-8 relative">
+
         {/* Parent header */}
         <header className="space-y-3">
           <h1 className="section-heading">Blog</h1>
@@ -200,10 +212,12 @@ export default function BlogPage() {
           More in-depth articles, project case studies and video guides are
           coming soon.
         </p>
+
       </div>
     </div>
   );
 }
+
 
 /* ============ SOCIAL CARD (unchanged) ============ */
 
