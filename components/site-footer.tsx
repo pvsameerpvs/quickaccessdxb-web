@@ -28,30 +28,38 @@ export function SiteFooter() {
 
             {/* Social Icons */}
             <div className="mt-4 flex items-center gap-3">
-              <Link
-                href="https://www.facebook.com/people/Quick-Access/61580390063588/?rdid=ComJdsn00c65UDKO&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1LpxqxVyko%2F"
-                target="_blank"
-                className="rounded-full border border-transparent bg-background/60 p-2 text-muted-foreground transition hover:border-[#FF8A1E]/60 hover:bg-[#FF8A1E]/10 hover:text-[#FF8A1E]"
-              >
-                <Facebook className="h-4 w-4" />
-              </Link>
+  {/* Facebook */}
+  <Link
+    href="https://www.facebook.com/people/Quick-Access/61580390063588/?rdid=ComJdsn00c65UDKO&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1LpxqxVyko%2F"
+    target="_blank"
+    className="rounded-full bg-[#1877F2] p-2 text-white transition hover:brightness-110"
+  >
+    <Facebook className="h-4 w-4" />
+  </Link>
 
-              <Link
-                href="https://www.instagram.com/dxbquickaccess/?igsh=bXo3eTF3enk0MGY5#"
-                target="_blank"
-                className="rounded-full border border-transparent bg-background/60 p-2 text-muted-foreground transition hover:border-[#FF8A1E]/60 hover:bg-[#FF8A1E]/10 hover:text-[#FF8A1E]"
-              >
-                <Instagram className="h-4 w-4" />
-              </Link>
+  {/* Instagram */}
+  <Link
+    href="https://www.instagram.com/dxbquickaccess/?igsh=bXo3eTF3enk0MGY5#"
+    target="_blank"
+    className="rounded-full p-2 text-white transition hover:brightness-110"
+    style={{
+      background:
+        "linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4)",
+    }}
+  >
+    <Instagram className="h-4 w-4" />
+  </Link>
 
-              <Link
-                href="https://www.linkedin.com/company/quick-access-technical-services/"
-                target="_blank"
-                className="rounded-full border border-transparent bg-background/60 p-2 text-muted-foreground transition hover:border-[#FF8A1E]/60 hover:bg-[#FF8A1E]/10 hover:text-[#FF8A1E]"
-              >
-                <Linkedin className="h-4 w-4" />
-              </Link>
-            </div>
+  {/* LinkedIn */}
+  <Link
+    href="https://www.linkedin.com/company/quick-access-technical-services/"
+    target="_blank"
+    className="rounded-full bg-[#0077B5] p-2 text-white transition hover:brightness-110"
+  >
+    <Linkedin className="h-4 w-4" />
+  </Link>
+</div>
+
           </div>
 
           {/* Quick Links */}

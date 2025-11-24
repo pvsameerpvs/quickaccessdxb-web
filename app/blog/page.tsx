@@ -1,5 +1,7 @@
+// app/blog/page.tsx
 import Image from "next/image";
 import Link from "next/link";
+import { BlogSection } from "@/components/blog-section";
 
 export const metadata = {
   title: "Blog – QuickAccess DXB",
@@ -7,13 +9,14 @@ export const metadata = {
     "Insights, tips and updates related to interior design, fit out, renovation and property maintenance in Dubai.",
 };
 
-type BlogPost = {
+export type BlogPost = {
   slug: string;
   title: string;
   excerpt: string;
   category: string;
   readTime: string;
   image: string;
+  content: string;
 };
 
 type SocialItem = {
@@ -34,6 +37,27 @@ const blogPosts: BlogPost[] = [
     category: "Renovation",
     readTime: "5 min read",
     image: "/how-to-plan.jpeg",
+    content: `
+Planning a renovation in Dubai involves more than just choosing finishes and layouts. Between approvals, budgeting, and coordinating contractors, it’s important to follow a clear process.
+
+1. Define your scope and goals  
+Start by listing all areas you want to renovate: kitchen, bathrooms, flooring, walls, lighting, etc. Decide if the work is cosmetic (painting, fixtures) or structural (walls, MEP changes).
+
+2. Check building and community regulations  
+Most buildings and communities in Dubai have specific rules. You may need NOC from the building management, and in some cases approvals from Dubai Municipality or DCD if major changes are involved.
+
+3. Set a realistic budget  
+Include: material costs, labour, approvals, contingency (10–15%), and temporary living arrangements if needed. Get a detailed quotation instead of a rough lump sum.
+
+4. Choose a licensed contractor  
+Always work with a company that has a valid trade license and experience with similar projects. Ask to see previous work, references, and project photos.
+
+5. Plan timeline and phases  
+Renovations often affect daily life. Phase the work (e.g. wet areas first, then finishes) and understand expected lead times for materials.
+
+6. Handover and snagging  
+Before final handover, walk through the work with your contractor, create a snag list, and ensure all items are resolved.
+    `,
   },
   {
     slug: "fit-out-regulations-dubai",
@@ -43,6 +67,21 @@ const blogPosts: BlogPost[] = [
     category: "Fit-Out Compliance",
     readTime: "6 min read",
     image: "/Dubai-Fit-Out.jpeg",
+    content: `
+Fit-out work in Dubai is heavily regulated to ensure safety, accessibility, and compliance with community standards.
+
+Key authorities involved:  
+- Dubai Municipality (DM) – structural changes, health & safety  
+- Dubai Civil Defence (DCD) – fire safety, exits, firefighting systems  
+- Community / building management – internal rules, working hours, noise control  
+
+Typical requirements:  
+• Approved drawings (layouts, MEP, fire fighting, etc.)  
+• Use of certified materials where required (fire-rated doors, cables, etc.)  
+• Licensed contractors and subcontractors  
+
+Never start demolition or major modification before clarifying which approvals are required for your project. A good fit-out contractor will guide you through this process.
+    `,
   },
   {
     slug: "annual-maintenance-checklist",
@@ -52,6 +91,19 @@ const blogPosts: BlogPost[] = [
     category: "Maintenance",
     readTime: "4 min read",
     image: "/Annual-Maintenance.jpeg",
+    content: `
+Dubai’s climate is harsh on properties. High temperatures, humidity, and dust mean regular maintenance is essential.
+
+Annual checklist items:  
+• AC servicing (at least twice a year)  
+• Check and clean drain lines to prevent leaks  
+• Inspect waterproofing in bathrooms, balconies, and roofs  
+• Test RCDs and main breakers in the DB  
+• Look for cracks in grout, tiles, and external walls  
+• Flush water tanks and clean filters  
+
+Regular maintenance reduces emergency breakdowns and extends the life of your systems and finishes.
+    `,
   },
   {
     slug: "smart-interior-upgrades",
@@ -61,6 +113,17 @@ const blogPosts: BlogPost[] = [
     category: "Interior Design",
     readTime: "5 min read",
     image: "/SmartInteriorUpgrades.jpeg",
+    content: `
+Some upgrades deliver outsized value when it comes to resale or rental potential.
+
+High-impact upgrades:  
+• Modern lighting – layered lighting, warm temperatures, and dimmers  
+• Built-in storage – wardrobes, TV units, and smart cabinetry  
+• Quality flooring – durable, neutral, and easy to maintain  
+• Kitchen and bathrooms – updated fixtures, tiles, and counters  
+
+Focus on clean, timeless design rather than very personal, niche styles.
+    `,
   },
 ];
 
@@ -75,7 +138,7 @@ const socialItems: SocialItem[] = [
   },
   {
     id: "ig-post-1",
-    type: "post",
+    type: "reel",
     platform: "Instagram",
     title: "Site Progress – Fit-Out in Business Bay",
     url: "https://www.instagram.com/reel/DRCJdftkvY4/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
@@ -91,7 +154,7 @@ const socialItems: SocialItem[] = [
   },
   {
     id: "li-post-1",
-    type: "post",
+    type: "reel",
     platform: "Instagram",
     title: "Why Scheduled Maintenance Saves Money Long-Term",
     url: "https://www.instagram.com/reel/DOdMTkjiTih/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
@@ -102,9 +165,9 @@ const socialItems: SocialItem[] = [
 export default function BlogPage() {
   return (
     <div className="section-padding bg-gradient-to-b from-background via-background to-muted/40">
-      <div className="container ">
+      <div className="container space-y-8">
         {/* Parent header */}
-        <header className="space-y-3 ">
+        <header className="space-y-3">
           <h1 className="section-heading">Blog</h1>
           <p className="section-subtitle">
             Insights, case studies and practical advice on renovation, fit-out
@@ -112,25 +175,10 @@ export default function BlogPage() {
           </p>
         </header>
 
-        {/* Blog section (you can extract to <BlogSection /> later) */}
-        <section className="space-y-4">
-          <div className="flex items-center justify-between gap-3">
-            <h2 className="text-base font-semibold md:text-lg">
-              Latest articles
-            </h2>
-            <p className="text-xs text-muted-foreground">
-              Guides for homeowners, landlords & facility managers.
-            </p>
-          </div>
+        {/* Blog section with modal */}
+        <BlogSection posts={blogPosts} />
 
-          <div className="grid gap-6 md:grid-cols-2">
-            {blogPosts.map((post) => (
-              <BlogCard key={post.slug} post={post} />
-            ))}
-          </div>
-        </section>
-
-        {/* Social media / Reels section (you can extract to <SocialSection /> later) */}
+        {/* Social media section */}
         <section className="space-y-4">
           <div className="flex items-center justify-between gap-3">
             <h2 className="text-base font-semibold md:text-lg">
@@ -157,49 +205,7 @@ export default function BlogPage() {
   );
 }
 
-/* ============ CHILD COMPONENTS (you can move them to separate files) ============ */
-
-type BlogCardProps = {
-  post: BlogPost;
-};
-
-function BlogCard({ post }: BlogCardProps) {
-  return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-background/70 hover:bg-muted/50 transition-colors">
-      <div className="relative h-40 w-full overflow-hidden">
-        <Image
-          src={post.image}
-          alt={post.title}
-          fill
-          className="object-cover group-hover:scale-[1.03] transition-transform duration-300"
-          sizes="(min-width: 1024px) 400px, 100vw"
-        />
-      </div>
-      <div className="flex flex-1 flex-col gap-3 p-4">
-        <div className="flex items-center justify-between text-xs text-muted-foreground">
-          <span className="font-medium uppercase tracking-wide text-primary">
-            {post.category}
-          </span>
-          <span>{post.readTime}</span>
-        </div>
-        <h3 className="text-sm font-semibold tracking-tight md:text-base">
-          {post.title}
-        </h3>
-        <p className="text-sm text-muted-foreground line-clamp-3">
-          {post.excerpt}
-        </p>
-        <div className="mt-auto pt-1">
-          <Link
-            href={`/blog/${post.slug}`}
-            className="inline-flex text-xs font-medium text-primary hover:underline"
-          >
-            Read more →
-          </Link>
-        </div>
-      </div>
-    </article>
-  );
-}
+/* ============ SOCIAL CARD (unchanged) ============ */
 
 type SocialCardProps = {
   item: SocialItem;

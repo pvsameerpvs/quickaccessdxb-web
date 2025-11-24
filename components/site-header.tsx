@@ -36,7 +36,7 @@ export function SiteHeader() {
 
         pathname === "/"
           ? "bg-transparent"
-          : ["/about", "/career", "/blog", "/contact"].includes(pathname)
+          : ["/about", "/blog"].includes(pathname)
           ? "bg-white"
           : "bg-gradient-to-l from-[#fa6a1e] via-[#fa8f4d] to-[#f5c26b]"
       )}

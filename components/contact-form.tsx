@@ -40,6 +40,7 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      
       <div className="grid gap-4 md:grid-cols-2">
         <Input
           placeholder="Full name"
@@ -83,11 +84,11 @@ export function ContactForm() {
         onChange={(e) => setDetails(e.target.value)}
       />
 
-      <Button type="submit" className="rounded-2xl">
+      <Button type="submit" className="rounded-2xl bg-white text-[#FF8A1E]">
         Submit Request
       </Button>
 
-      <p className="text-xs text-muted-foreground">
+      <p className="text-xs section-subtitle">
         By submitting this form you consent to being contacted by phone,
         WhatsApp or email regarding your enquiry.
       </p>
