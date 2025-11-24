@@ -6,6 +6,8 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Clock, ShieldCheck, PhoneCall, Wrench } from "lucide-react";
 import { getServiceBySlug, getServicesByCategory } from "@/lib/data";
 import { Button } from "@/components/ui/button";
+import { ServiceGallery } from "./ServiceGallery";
+
 
 type ServiceDetailPageProps = {
   params: { slug: string };
@@ -259,37 +261,11 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
 
           {/* Right: Image & CTA */}
           <div className="space-y-4 lg:space-y-6">
-            {/* Main Image */}
-            <div className="relative h-64 w-full overflow-hidden rounded-3xl border border-border/60 bg-muted md:h-80 lg:h-96">
-              <Image
-                src={service.image}
-                alt={service.name}
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 480px, 100vw"
-                priority
-              />
-            </div>
-
-            {/* Gallery Thumbnails */}
-            {service.gallery?.length ? (
-              <div className="grid grid-cols-3 gap-2">
-                {service.gallery.map((src) => (
-                  <div
-                    key={src}
-                    className="relative h-20 overflow-hidden rounded-2xl border border-border/40 bg-muted md:h-24"
-                  >
-                    <Image
-                      src={src}
-                      alt={service.name}
-                      fill
-                      className="object-cover"
-                      sizes="160px"
-                    />
-                  </div>
-                ))}
-              </div>
-            ) : null}
+            <ServiceGallery
+              name={service.name}
+              mainImage={service.image}
+              gallery={service.gallery}
+            />
 
             {/* CTA Card */}
             <div className="space-y-3 rounded-3xl border border-[#FF8A1E]/30 bg-[#FF8A1E]/6 p-4 md:p-5">

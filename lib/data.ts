@@ -556,6 +556,197 @@ export const services: Service[] = [
     "/bathroom-furbish4.jpeg"
   ]
 }
+,
+{
+  slug: "masonry-interlocking",
+  name: "Masonry & Interlocking Works",
+  category: "service",
+  tagline: "Complete Masonry & Interlocking Solutions",
+  description:
+    "Comprehensive masonry and interlocking works including blockwork, brickwork, plastering, concrete works, outdoor masonry, full interlock installation, and site preparation for villas, buildings, commercial properties, and landscapes.",
+
+  highlights: [
+    "Block & Brick Wall Construction",
+    "Internal & External Plastering",
+    "Concrete Foundations & Flooring",
+    "Garden Masonry & Landscape Elements",
+    "Kerbstone & Edging Works",
+    "Interlock Supply & Installation",
+    "Driveway & Parking Interlock Solutions",
+    "Interlock Repair & Re-Leveling",
+    "Custom Interlock Patterns",
+    "Full Site Preparation & Compaction",
+    "Water Drainage Integration",
+    "Masonry Repair & Surface Leveling"
+  ],
+
+  details: [
+    {
+      title: "Block Works",
+      points: [
+        "Cement block wall construction (hollow/solid blocks)",
+        "Partition walls",
+        "Boundary wall construction",
+        "Machine-made block installation",
+        "AAC block installation",
+        "Block wall repair, extension & demolition"
+      ]
+    },
+    {
+      title: "Brick Works",
+      points: [
+        "Red brick wall construction",
+        "Decorative brick wall design",
+        "Brick cladding installation",
+        "Brick repair & pointing"
+      ]
+    },
+    {
+      title: "Plastering & Rendering",
+      points: [
+        "Internal wall plastering",
+        "External sand-cement rendering",
+        "Smooth & textured finish",
+        "Patch repair plastering",
+        "Ceiling plaster work"
+      ]
+    },
+    {
+      title: "Concrete Works",
+      points: [
+        "Concrete flooring",
+        "Concrete foundation works",
+        "PCC & RCC work",
+        "Slab casting",
+        "Column, beam & footing works",
+        "Garden concrete base preparation"
+      ]
+    },
+    {
+      title: "Tiling Wainscot & Masonry Supports",
+      points: [
+        "Tile backing walls (screed, mortar bedding)",
+        "Masonry supports for kitchen counters",
+        "Masonry base for sinks, cabinets & wash basins"
+      ]
+    },
+    {
+      title: "Outdoor & Landscape Masonry",
+      points: [
+        "Garden edging blocks",
+        "Curbstone installation",
+        "Outdoor seating masonry",
+        "Planter box construction",
+        "BBQ area masonry base"
+      ]
+    },
+    {
+      title: "Masonry Repair Works",
+      points: [
+        "Crack repairs (walls & floors)",
+        "Replastering damaged areas",
+        "Wall alignment correction",
+        "Surface leveling & grouting",
+        "Water leakage masonry repairs"
+      ]
+    },
+    {
+      title: "Complete Interlock Installation",
+      points: [
+        "Supply & installation of interlock pavers",
+        "Area leveling & compaction",
+        "Sub-base & sand bedding preparation",
+        "Alignment & slope creation",
+        "Edge restraints installation"
+      ]
+    },
+    {
+      title: "Interlock Patterns",
+      points: [
+        "Classic interlock",
+        "Hexagonal",
+        "Zig-zag",
+        "Uni-shaped",
+        "Herringbone pattern",
+        "Stretcher bond",
+        "Fan pattern",
+        "Custom decorative patterns"
+      ]
+    },
+    {
+      title: "Interlock Tiles & Blocks Types",
+      points: [
+        "Concrete interlock pavers",
+        "Colored & textured interlocks",
+        "Heavy-duty industrial interlocks",
+        "Driveway & parking interlocks",
+        "Walkway & garden interlocks",
+        "Decorative stone patterns",
+        "Kerbstone fixing & installation"
+      ]
+    },
+    {
+      title: "Interlock Repair & Maintenance",
+      points: [
+        "Replacement of damaged interlock tiles",
+        "Re-leveling uneven surfaces",
+        "Fixing sunken or loose interlocks",
+        "Base re-compaction",
+        "Water drainage correction",
+        "Cleaning & resealing (optional)"
+      ]
+    },
+    {
+      title: "Supporting Works",
+      points: [
+        "Excavation & soil removal",
+        "Road base sub-layer preparation",
+        "Sand bedding installation",
+        "Joint grouting & sealing",
+        "Water drainage integration",
+        "Curbstone alignment",
+        "Concrete edge work",
+        "Landscaping coordination"
+      ]
+    },
+    {
+      title: "Types of Projects",
+      points: [
+        "Villas & homes",
+        "Apartments",
+        "Commercial buildings",
+        "Warehouses",
+        "Restaurants",
+        "Industrial sites",
+        "Parking lots & driveways",
+        "Walkways & pathways",
+        "Gardens & landscapes"
+      ]
+    },
+    {
+      title: "Complete Masonry & Interlocking Services",
+      points: [
+        "Block & brick wall construction",
+        "Internal & external plastering",
+        "Concrete foundations & flooring",
+        "Garden masonry works",
+        "Kerbstone & edging works",
+        "Interlock supply & installation",
+        "Driveway & parking interlocks",
+        "Interlock repair & re-leveling",
+        "Decorative & heavy-duty interlock solutions",
+        "Full site preparation & finishing"
+      ]
+    }
+  ],
+
+  image: "/masonry-interlock-main.jpeg",
+  gallery: [
+    "/masonry-interlock1.jpeg",
+    "/masonry-interlock2.jpeg",
+    "/masonry-interlock3.jpeg"
+  ]
+}
 
 
 
@@ -1910,194 +2101,194 @@ export const services: Service[] = [
   ]
 }
 ,
-  {
-  slug: "hvac-installation",
-  name: "HVAC Installation",
-  category: "service",
-  tagline: "HVAC Design & Installation",
+//   {
+//   slug: "hvac-installation",
+//   name: "HVAC Installation",
+//   category: "service",
+//   tagline: "HVAC Design & Installation",
 
-  description:
-    "Complete HVAC installation including site survey, heat load calculation, ducting, refrigerant piping, electrical setup, ventilation systems, and final testing for residential, commercial, and industrial projects.",
+//   description:
+//     "Complete HVAC installation including site survey, heat load calculation, ducting, refrigerant piping, electrical setup, ventilation systems, and final testing for residential, commercial, and industrial projects.",
 
-  highlights: [
-    "Split, ducted, VRF/VRV and central AC installation",
-    "Complete ducting and insulation works",
-    "Electrical connection and thermostat setup",
-    "Fresh air and exhaust system installation",
-    "Refrigerant piping, gas charging and leak testing",
-    "Testing, balancing and commissioning",
-    "HVAC installation for homes, offices and commercial projects",
-    "Full HVAC system replacement and upgrades"
-  ],
+//   highlights: [
+//     "Split, ducted, VRF/VRV and central AC installation",
+//     "Complete ducting and insulation works",
+//     "Electrical connection and thermostat setup",
+//     "Fresh air and exhaust system installation",
+//     "Refrigerant piping, gas charging and leak testing",
+//     "Testing, balancing and commissioning",
+//     "HVAC installation for homes, offices and commercial projects",
+//     "Full HVAC system replacement and upgrades"
+//   ],
 
-  details: [
-    {
-      title: "HVAC System Types We Install",
-      points: [
-        "Split AC (wall-mounted)",
-        "Ducted split units",
-        "Central AC systems",
-        "Package units",
-        "VRF / VRV systems",
-        "Chiller AC systems",
-        "Cassette AC units",
-        "Floor-standing units",
-        "Ceiling concealed units",
-        "Exhaust fan systems",
-        "Fresh air units (FAHU)",
-        "Air Handling Units (AHU)"
-      ]
-    },
-    {
-      title: "Pre-Installation Work",
-      points: [
-        "Site survey and load calculation",
-        "Heat load analysis (BTU calculation)",
-        "Duct design and sizing",
-        "Piping and drainage route planning",
-        "Electrical load assessment",
-        "Location marking for indoor and outdoor units"
-      ]
-    },
-    {
-      title: "Indoor Unit Installation",
-      points: [
-        "Mounting indoor unit (wall, ceiling, ducted)",
-        "Insulated copper piping installation",
-        "Drainage pipe installation",
-        "Installation of control wires",
-        "Indoor unit air balancing",
-        "Indoor unit testing and commissioning"
-      ]
-    },
-    {
-      title: "Outdoor Unit Installation",
-      points: [
-        "Outdoor unit base creation (stand, brackets, concrete base)",
-        "Installation of condenser units",
-        "Refrigerant piping connection",
-        "Weatherproof electrical connections",
-        "Vibration control installation",
-        "Gas charging and pressure test"
-      ]
-    },
-    {
-      title: "Ducting Works",
-      points: [
-        "GI duct fabrication and installation",
-        "Flexible duct installation",
-        "Thermal and acoustic duct insulation",
-        "Installation of volume control dampers",
-        "Fire dampers (as required)",
-        "Installation of diffusers, grilles and registers"
-      ]
-    },
-    {
-      title: "Refrigerant Piping Works",
-      points: [
-        "Copper pipe installation with insulation",
-        "Flare connections and brazing",
-        "Refrigerant gas charging",
-        "Vacuuming and leak testing",
-        "Pressure testing for system safety"
-      ]
-    },
-    {
-      title: "Electrical Connection Works",
-      points: [
-        "Indoor and outdoor unit power connection",
-        "DB load management",
-        "AC isolator installation",
-        "Smart thermostat or controller setup",
-        "Control cabling (low-voltage)",
-        "Cable tray and conduit installation"
-      ]
-    },
-    {
-      title: "Controls & Thermostat Installation",
-      points: [
-        "Digital thermostat installation",
-        "Smart AC controller setup",
-        "Multi-zone control installation",
-        "Thermostat communication testing",
-        "Temperature calibration"
-      ]
-    },
-    {
-      title: "Ventilation System Installation",
-      points: [
-        "Exhaust system installation",
-        "Fresh air duct installation",
-        "FAHU (Fresh Air Handling Unit) setup",
-        "Kitchen and toilet exhaust installation",
-        "Smoke extraction fans (commercial)"
-      ]
-    },
-    {
-      title: "Final Testing & Commissioning",
-      points: [
-        "Cooling performance test",
-        "Airflow tuning and balancing",
-        "Thermostat functionality test",
-        "Refrigerant pressure test",
-        "Noise and vibration check",
-        "Complete system startup and verification",
-        "Client handover documentation"
-      ]
-    },
-    {
-      title: "Types of Projects We Handle",
-      points: [
-        "Homes (flats, apartments)",
-        "Villas and townhouses",
-        "Offices and commercial spaces",
-        "Restaurants and cafés",
-        "Retail shops",
-        "Warehouses",
-        "Buildings and towers",
-        "Industrial sites",
-        "Server rooms and IT rooms",
-        "Clinics and healthcare facilities"
-      ]
-    },
-    {
-      title: "Additional HVAC Installation Services",
-      points: [
-        "AC relocation and reinstallation",
-        "Complete HVAC system replacement",
-        "Upgrading old AC systems",
-        "Duct modification and extension",
-        "Outdoor unit shifting",
-        "Adding new AC points",
-        "Server room cooling setup",
-        "Fresh air and exhaust integration",
-        "Thermostat upgrading"
-      ]
-    },
-    {
-      title: "Our HVAC Installation Services",
-      points: [
-        "Split AC installation",
-        "Ducted split installation",
-        "Central AC and package units",
-        "VRF / VRV system installation",
-        "Fresh air and exhaust system setup",
-        "GI ducting and insulation works",
-        "Electrical and thermostat installation",
-        "Full testing and commissioning",
-        "Complete HVAC project execution"
-      ]
-    }
-  ],
+//   details: [
+//     {
+//       title: "HVAC System Types We Install",
+//       points: [
+//         "Split AC (wall-mounted)",
+//         "Ducted split units",
+//         "Central AC systems",
+//         "Package units",
+//         "VRF / VRV systems",
+//         "Chiller AC systems",
+//         "Cassette AC units",
+//         "Floor-standing units",
+//         "Ceiling concealed units",
+//         "Exhaust fan systems",
+//         "Fresh air units (FAHU)",
+//         "Air Handling Units (AHU)"
+//       ]
+//     },
+//     {
+//       title: "Pre-Installation Work",
+//       points: [
+//         "Site survey and load calculation",
+//         "Heat load analysis (BTU calculation)",
+//         "Duct design and sizing",
+//         "Piping and drainage route planning",
+//         "Electrical load assessment",
+//         "Location marking for indoor and outdoor units"
+//       ]
+//     },
+//     {
+//       title: "Indoor Unit Installation",
+//       points: [
+//         "Mounting indoor unit (wall, ceiling, ducted)",
+//         "Insulated copper piping installation",
+//         "Drainage pipe installation",
+//         "Installation of control wires",
+//         "Indoor unit air balancing",
+//         "Indoor unit testing and commissioning"
+//       ]
+//     },
+//     {
+//       title: "Outdoor Unit Installation",
+//       points: [
+//         "Outdoor unit base creation (stand, brackets, concrete base)",
+//         "Installation of condenser units",
+//         "Refrigerant piping connection",
+//         "Weatherproof electrical connections",
+//         "Vibration control installation",
+//         "Gas charging and pressure test"
+//       ]
+//     },
+//     {
+//       title: "Ducting Works",
+//       points: [
+//         "GI duct fabrication and installation",
+//         "Flexible duct installation",
+//         "Thermal and acoustic duct insulation",
+//         "Installation of volume control dampers",
+//         "Fire dampers (as required)",
+//         "Installation of diffusers, grilles and registers"
+//       ]
+//     },
+//     {
+//       title: "Refrigerant Piping Works",
+//       points: [
+//         "Copper pipe installation with insulation",
+//         "Flare connections and brazing",
+//         "Refrigerant gas charging",
+//         "Vacuuming and leak testing",
+//         "Pressure testing for system safety"
+//       ]
+//     },
+//     {
+//       title: "Electrical Connection Works",
+//       points: [
+//         "Indoor and outdoor unit power connection",
+//         "DB load management",
+//         "AC isolator installation",
+//         "Smart thermostat or controller setup",
+//         "Control cabling (low-voltage)",
+//         "Cable tray and conduit installation"
+//       ]
+//     },
+//     {
+//       title: "Controls & Thermostat Installation",
+//       points: [
+//         "Digital thermostat installation",
+//         "Smart AC controller setup",
+//         "Multi-zone control installation",
+//         "Thermostat communication testing",
+//         "Temperature calibration"
+//       ]
+//     },
+//     {
+//       title: "Ventilation System Installation",
+//       points: [
+//         "Exhaust system installation",
+//         "Fresh air duct installation",
+//         "FAHU (Fresh Air Handling Unit) setup",
+//         "Kitchen and toilet exhaust installation",
+//         "Smoke extraction fans (commercial)"
+//       ]
+//     },
+//     {
+//       title: "Final Testing & Commissioning",
+//       points: [
+//         "Cooling performance test",
+//         "Airflow tuning and balancing",
+//         "Thermostat functionality test",
+//         "Refrigerant pressure test",
+//         "Noise and vibration check",
+//         "Complete system startup and verification",
+//         "Client handover documentation"
+//       ]
+//     },
+//     {
+//       title: "Types of Projects We Handle",
+//       points: [
+//         "Homes (flats, apartments)",
+//         "Villas and townhouses",
+//         "Offices and commercial spaces",
+//         "Restaurants and cafés",
+//         "Retail shops",
+//         "Warehouses",
+//         "Buildings and towers",
+//         "Industrial sites",
+//         "Server rooms and IT rooms",
+//         "Clinics and healthcare facilities"
+//       ]
+//     },
+//     {
+//       title: "Additional HVAC Installation Services",
+//       points: [
+//         "AC relocation and reinstallation",
+//         "Complete HVAC system replacement",
+//         "Upgrading old AC systems",
+//         "Duct modification and extension",
+//         "Outdoor unit shifting",
+//         "Adding new AC points",
+//         "Server room cooling setup",
+//         "Fresh air and exhaust integration",
+//         "Thermostat upgrading"
+//       ]
+//     },
+//     {
+//       title: "Our HVAC Installation Services",
+//       points: [
+//         "Split AC installation",
+//         "Ducted split installation",
+//         "Central AC and package units",
+//         "VRF / VRV system installation",
+//         "Fresh air and exhaust system setup",
+//         "GI ducting and insulation works",
+//         "Electrical and thermostat installation",
+//         "Full testing and commissioning",
+//         "Complete HVAC project execution"
+//       ]
+//     }
+//   ],
 
-  image: "/HVAC-Installation1.jpeg",
-  gallery: [
-    "/HVAC-Installation2.jpeg",
-    "/HVAC-Installation3.jpeg",
-    "/HVAC-Installation4.jpeg"
-  ]
-}
-,
+//   image: "/HVAC-Installation1.jpeg",
+//   gallery: [
+//     "/HVAC-Installation2.jpeg",
+//     "/HVAC-Installation3.jpeg",
+//     "/HVAC-Installation4.jpeg"
+//   ]
+// }
+
   {
   slug: "plumbing-services",
   name: "Plumbing Services",
@@ -2269,8 +2460,8 @@ export const services: Service[] = [
     }
   ],
 
-  image: "/plumber1.jpeg",
-  gallery: ["/plumber2.jpeg", "/plumber3.jpeg", "/plumber4.jpeg"]
+  image: "/plumb2.jpeg",
+  gallery: ["/plumber2.jpeg", "/plumb1.jpeg", "/plumber1.jpeg"]
 }
 ,
  {
@@ -3095,7 +3286,7 @@ export const services: Service[] = [
 
   image: "/cleaning1.jpeg",
   gallery: [
-    "/cleaning2.jpeg",
+    "/cleaning-123.jpeg",
     "/cleaning3.jpeg",
     "/cleaning4.jpeg"
   ]
