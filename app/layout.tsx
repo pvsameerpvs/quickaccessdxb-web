@@ -37,6 +37,8 @@ export default function RootLayout({
             <PaddedMain>{children}</PaddedMain>
 
             <SiteFooter />
+              {/* 👇 ADD THIS HERE */}
+            <WhatsappFloat />
             {/* <SupportPill /> */}
           </div>
         </ThemeProvider>

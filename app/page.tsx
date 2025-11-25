@@ -7,6 +7,7 @@ import { FaqSection } from "@/components/faq-section";
 import AboutPage from "./about/page";
 import { SupportPill } from "@/components/support-pill";
 import { FavoriteProjectDubaiSportsCity } from "@/components/FavoriteProjectDubaiSportsCity";
+import { BrandLogos } from "@/components/BrandLogos";
 
 export default function HomePage() {
   const serviceItems = getServicesByCategory("service");
@@ -33,7 +34,9 @@ export default function HomePage() {
         limit={6}
       />
       <FavoriteProjectDubaiSportsCity />
+
       <WhyChooseSection />
+      <BrandLogos/>
       <FaqSection />
     </>
   );
