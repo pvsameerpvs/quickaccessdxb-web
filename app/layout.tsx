@@ -16,6 +16,8 @@ export const metadata: Metadata = {
     "Interior design, office fit out, villa renovation, apartment revamp, HVAC, MEP, carpentry, tiling, painting and handyman services in Dubai.",
 };
 
+import { SmoothScroll } from "@/components/smooth-scroll";
+
 export default function RootLayout({
   children,
 }: {
@@ -30,17 +32,19 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen flex-col">
-            <SiteHeader />
+          <SmoothScroll>
+            <div className="flex min-h-screen flex-col">
+              <SiteHeader />
 
-            {/* 👇 Now padding only on non-home pages */}
-            <PaddedMain>{children}</PaddedMain>
+              {/* 👇 Now padding only on non-home pages */}
+              <PaddedMain>{children}</PaddedMain>
 
-            <SiteFooter />
+              <SiteFooter />
               {/* 👇 ADD THIS HERE */}
-            <WhatsappFloat />
-            {/* <SupportPill /> */}
-          </div>
+              <WhatsappFloat />
+              {/* <SupportPill /> */}
+            </div>
+          </SmoothScroll>
         </ThemeProvider>
       </body>
     </html>
