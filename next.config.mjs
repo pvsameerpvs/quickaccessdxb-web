@@ -1,11 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  trailingSlash: true,
-
-  experimental: {
-    appDir: true,
-  },
+  trailingSlash: false,
 
   images: {
     unoptimized: true, // required for export hosting

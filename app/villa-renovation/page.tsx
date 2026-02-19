@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, MessageCircle, ChevronRight, Star, CheckCircle2, Clock, MapPin, ShieldCheck, ArrowRight, Home, Layout, Pipette, Hammer, Droplets, Fan, Zap, BadgePercent, Coins, Construction } from "lucide-react";
+import { Phone, Mail, MessageCircle, ChevronRight, Star, CheckCircle2, Clock, MapPin, ShieldCheck, ArrowRight, Home, Layout, Pipette, Hammer, Droplets, Fan, Zap, BadgePercent, Coins, Construction, Wallet, Banknote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -217,90 +217,80 @@ export default function VillaRenovationLanding() {
       </section>
 
       {/* --- BUDGET SECTION --- */}
-     
-
-      {/* --- NEW SECTION: LOW BUDGET SOLUTIONS --- */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <div className="relative h-[400px] rounded-[2rem] overflow-hidden shadow-2xl">
-                    <Image src="/Interior.jpg" alt="Low Budget Renovation" fill className="object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent flex items-end p-8">
-                        <p className="text-white text-lg font-bold">Smart styling, lower costs.</p>
-                    </div>
-                </div>
-                <div className="space-y-8">
-                    <h2 className="text-3xl md:text-5xl font-black text-slate-900 leading-tight">Low Budget? <br /><span className="text-[#fa8f4d]">Big Results.</span></h2>
-                    <p className="text-slate-500 text-lg font-light leading-relaxed">
-                        You don't need millions to make your villa look new. We specialize in "Smart Renovations" that focus on what matters most.
-                    </p>
-                    <div className="grid sm:grid-cols-2 gap-6">
-                        <div className="space-y-3">
-                            <div className="flex items-center gap-2 font-bold text-slate-900 text-sm">
-                                <div className="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center text-[#fa8f4d]">1</div>
-                                Refresh, Don't Replace
-                            </div>
-                            <p className="text-xs text-slate-500 leading-relaxed">We repaint cabinets and polish marble to save you 60% compared to buying new.</p>
-                        </div>
-                        <div className="space-y-3">
-                            <div className="flex items-center gap-2 font-bold text-slate-900 text-sm">
-                                <div className="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center text-[#fa8f4d]">2</div>
-                                Smart Lighting
-                            </div>
-                            <p className="text-xs text-slate-500 leading-relaxed">Professional LED placement can make a simple room look like a luxury hotel suite.</p>
-                        </div>
-                        <div className="space-y-3">
-                            <div className="flex items-center gap-2 font-bold text-slate-900 text-sm">
-                                <div className="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center text-[#fa8f4d]">3</div>
-                                Targeted Tiling
-                            </div>
-                            <p className="text-xs text-slate-500 leading-relaxed">Changing just the "focal point" tiles creates a massive visual impact on a tiny budget.</p>
-                        </div>
-                        <div className="space-y-3">
-                            <div className="flex items-center gap-2 font-bold text-slate-900 text-sm">
-                                <div className="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center text-[#fa8f4d]">4</div>
-                                Factory Direct
-                            </div>
-                            <p className="text-xs text-slate-500 leading-relaxed">We source materials directly from local suppliers to remove middleman costs for you.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </section>
-
-      {/* --- SERVICES GRID --- */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-            <div className="text-center mb-12">
-                <h2 className="text-3xl font-black text-slate-900 mb-4">Our Services</h2>
-                <div className="h-1 w-16 bg-[#fa8f4d] mx-auto rounded-full" />
+            <div className="text-center mb-16 px-4">
+                <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-4">Renovate Within Your Budget</h2>
+                <p className="text-slate-500 max-w-2xl mx-auto font-light leading-relaxed">Whether you need a quick refresh or a complete luxury overhaul, we have flexible plans to fit every pocket.</p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {detailedServices.map((s, i) => (
+            <div className="grid md:grid-cols-3 gap-8">
+                {budgetOptions.map((opt, i) => (
                     <motion.div
+                        whileHover={{ y: -5 }}
                         key={i}
-                        className="bg-slate-50 rounded-2xl overflow-hidden group flex flex-col h-full border border-slate-100"
+                        className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm flex flex-col items-center text-center space-y-4"
                     >
-                        <div className="relative h-48 overflow-hidden">
-                            <Image src={s.img} alt={s.title} fill className="object-cover transition-transform group-hover:scale-105" />
+                        <div className="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center text-[#fa8f4d] mb-4">
+                            {i === 0 ? <Coins size={24} /> : i === 1 ? <Construction size={24} /> : <BadgePercent size={24} />}
                         </div>
-                        <div className="p-6">
-                            <h4 className="text-lg font-bold text-slate-900 mb-2">{s.title}</h4>
-                            <p className="text-slate-500 text-xs leading-relaxed font-light">{s.text}</p>
+                        <div>
+                            <p className="text-[10px] font-black uppercase text-[#fa8f4d] tracking-widest mb-1">{opt.subtitle}</p>
+                            <h4 className="text-xl font-bold text-slate-900">{opt.title}</h4>
                         </div>
+                        <p className="text-sm text-slate-500 font-light leading-relaxed">{opt.text}</p>
+                        <div className="text-lg font-bold text-slate-900 pt-2">{opt.price}</div>
+                        
+                        <div className="w-full pt-6 space-y-2 text-left">
+                            {opt.features.map(f => (
+                                <div key={f} className="flex items-center gap-2 text-xs text-slate-600 font-medium">
+                                    <CheckCircle2 size={12} className="text-[#fa8f4d]" /> {f}
+                                </div>
+                            ))}
+                        </div>
+
+                        <Button asChild variant="outline" className="w-full mt-8 rounded-xl border-slate-200 text-xs font-bold py-5">
+                            <Link href="#top">Get Quote</Link>
+                        </Button>
                     </motion.div>
                 ))}
             </div>
         </div>
       </section>
-       {/* --- NEW SECTION: SIMPLE PROCESS --- */}
+
+      {/* --- LOW BUDGET SPECIAL SECTION --- */}
+      <section className="py-24 bg-white border-y border-slate-100">
+        <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto bg-[#fa8f4d]/5 rounded-[3rem] p-8 md:p-16 border border-[#fa8f4d]/20 relative overflow-hidden text-center md:text-left">
+                <div className="absolute top-0 right-0 p-12 opacity-10 pointer-events-none hidden md:block">
+                    <Wallet size={120} className="text-[#fa8f4d]" />
+                </div>
+                <div className="relative z-10 space-y-6">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#fa8f4d] text-white text-[10px] font-black uppercase tracking-widest leading-none">
+                        Money concern? We can help
+                    </div>
+                    <h2 className="text-3xl md:text-5xl font-black text-slate-900 leading-tight">If your budget is low, <br /><span className="text-[#fa8f4d]">We still work for you.</span></h2>
+                    <p className="text-slate-600 text-lg font-light leading-relaxed max-w-2xl">
+                        A beautiful home shouldn't be only for those with millions. We offer <strong>"Smart-Save" Renovations</strong> where we prioritize high-impact areas like painting and lighting to give your villa a new life at the lowest possible cost.
+                    </p>
+                    <div className="flex flex-wrap gap-4 pt-4">
+                        <Button asChild className="h-14 px-8 rounded-full bg-slate-900 text-white hover:bg-[#fa8f4d] font-bold text-sm shadow-xl border-0 active:scale-95 transition-all">
+                           <Link href="#top">Discuss Your Budget</Link>
+                        </Button>
+                        <div className="flex items-center gap-3 px-6 text-slate-500 font-medium text-sm">
+                            <Banknote size={20} className="text-[#25D366]" /> Flexible Payment Options
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      {/* --- SIMPLE PROCESS --- */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 text-center">
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-16 italic">Complete Peace of Mind in <span className="text-[#fa8f4d]">3 Simple Steps</span></h2>
+            <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-16 italic">Peace of Mind in <span className="text-[#fa8f4d]">3 Simple Steps</span></h2>
             <div className="grid md:grid-cols-3 gap-12 relative">
-                {/* Connector lines on desktop */}
                 <div className="hidden md:block absolute top-[60px] left-[20%] right-[20%] h-px bg-slate-100 z-0" />
                 
                 <div className="relative z-10 space-y-6">
@@ -322,10 +312,37 @@ export default function VillaRenovationLanding() {
         </div>
       </section>
 
-      {/* --- PROJECTS GALLERY --- */}
+      {/* --- SERVICES GRID --- */}
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-6">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
+            <div className="text-center mb-12">
+                <h2 className="text-3xl font-black text-slate-900 mb-4">Our Core Services</h2>
+                <div className="h-1 w-16 bg-[#fa8f4d] mx-auto rounded-full" />
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {detailedServices.map((s, i) => (
+                    <motion.div
+                        key={i}
+                        className="bg-white rounded-2xl overflow-hidden group flex flex-col h-full border border-slate-100 shadow-sm"
+                    >
+                        <div className="relative h-48 overflow-hidden">
+                            <Image src={s.img} alt={s.title} fill className="object-cover transition-transform group-hover:scale-105" />
+                        </div>
+                        <div className="p-6">
+                            <h4 className="text-lg font-bold text-slate-900 mb-2">{s.title}</h4>
+                            <p className="text-slate-500 text-xs leading-relaxed font-light">{s.text}</p>
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+        </div>
+      </section>
+
+      {/* --- PROJECTS GALLERY --- */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4 text-center md:text-left">
                 <div>
                     <h2 className="text-3xl font-black text-slate-900 mb-2">Our Recent Work</h2>
                     <p className="text-sm text-slate-500 font-light">Delivering excellence across Dubai.</p>
@@ -349,8 +366,6 @@ export default function VillaRenovationLanding() {
         </div>
       </section>
 
-     
-
       {/* --- FINAL CTA --- */}
       <section className="py-20">
         <div className="container mx-auto px-6">
@@ -371,7 +386,6 @@ export default function VillaRenovationLanding() {
         </div>
       </section>
 
-      
       {/* --- MOBILE ACTION BAR --- */}
       <div className="lg:hidden fixed bottom-6 left-6 right-6 z-[100] flex gap-3">
             <Button asChild className="flex-1 h-16 rounded-2xl bg-[#25D366] text-white border-0 font-bold text-sm gap-2 shadow-[0_10px_30px_rgba(37,211,102,0.3)]">

@@ -6,7 +6,8 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsappFloat } from "@/components/whatsapp-float";
 import { SupportPill } from "@/components/support-pill";
-import { PaddedMain } from "@/components/padded-main"; // <- ADD THIS
+import { PaddedMain } from "@/components/padded-main";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
+        <GoogleAnalytics gaId="AW-17963562620" />
+
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
